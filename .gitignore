@@ -1,0 +1,4 @@
+datasets/preprocessed_datasets/*
+datasets/preprocessed_datasets/.gitkeep
+datasets/raw_datasets/*
+datasets/raw_datasets/.gitkeep
