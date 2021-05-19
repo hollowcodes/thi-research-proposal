@@ -1,3 +1,4 @@
+
 \documentclass[journal]{IEEEtran}
 
 \usepackage{graphicx}
@@ -25,22 +26,22 @@
 
 
 \begin{abstract}
-Neural Networks have proven themselves to be powerful classification 
-tools by solving problems in a range of domains with high accuracy. 
-But especially when it comes to multi-class classification the accuracy is never evenly distributed across all classes, which means that the true-positive rate for each class separately is different.
+Neural Networks have proven themselves to be powerful classification
+tools by solving problems in a range of domains with high accuracy.
+Yet this accuracy is never evenly distributed across all classes, which means that the true-positive rates of each class separately are different.
 This can happen even in balanced datasets since some classes are more difficult to learn by the model than others (this phenomenon is further referred to as \emph{learnability-imbalance}).
 A common way to address this problem is to give a weight to the error function for each class to penalize losses of certain classes higher or lower.
-This research will address the determination of such weights to counteract the learnability-imbalance of class-balanced data sets using previously calculated evaluation scores of the same model.
+This research will address the determination of such weights to counteract the learnability-imbalance in balanced datasets using previously calculated evaluation scores.
 Therefore the goal is to find methods to lower the variance of the true positive rates of each class.
 \end{abstract}
 
 
 \section{Introduction}
-When working with unbalanced datasets it is common to weight the loss functions [1] based on the percentage of elements per class that make in the whole dataset in order to prevent that one class is learned 
+When working with unbalanced datasets it is common to weight the loss functions [1] according to the size of each class, i.e. the number of samples it contains, in order to prevent that one class with less elements is learned 
 excessively worse than others.
-For each class, the error function will multiply the loss of its samples with the correspoding weight which leads to the enlargement of the error. 
+For each class, the error function will multiply the loss of its samples with the correspoding weight which leads to a larger.
 Since the aim of a neural network is to minimize that error, samples that produce a high loss will receive a higher focus.
-But this learnability imbalance appears also on balanced dataset for a vareity of reasons, for example when the quality of the data of a class is lower than the rest of the data. 
+But this learnability imbalance appears also on balanced dataset for a vareity of reasons, for example when the quality of the data of a class is lower than the rest of the data.
 A second reason, that will be presented later on, is that when the similiarity of the samples of two classes is high, 
 the model can confuse them with each other what will often result in a lower accuracy of both classes.
 The question is how to create loss weights for a model that gets trained on a balanced data set. To determine the learnability differences of the individual classes, the model must first be trained and evaluated normally and unweighted.
