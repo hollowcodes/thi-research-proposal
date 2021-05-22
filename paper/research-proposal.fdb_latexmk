@@ -1,5 +1,5 @@
 # Fdb version 3
-["pdflatex"] 1621695409 "d:/Linux/Programming/Python/MachineLearning/research-proposal/paper/research-proposal.tex" "research-proposal.pdf" "research-proposal" 1621695410
+["pdflatex"] 1621708736 "d:/Linux/Programming/Python/MachineLearning/research-proposal/paper/research-proposal.tex" "research-proposal.pdf" "research-proposal" 1621708738
   "C:/Users/Theodor/AppData/Local/MiKTeX/miktex/data/le/pdftex/pdflatex.fmt" 1621339262 9408413 555c74bd0465eaf25200ac7fcf4e0f30 ""
   "C:/Users/Theodor/AppData/Local/MiKTeX/pdftex/config/pdftex.map" 1621409989 82507 a9eef8696c92627b87e9975edea03b2a ""
   "C:/Users/Theodor/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/base/8r.enc" 1458477487 4993 80dc9bab7f31fb78a000ccfed0e27cab ""
@@ -42,12 +42,12 @@
   "C:/Users/Theodor/AppData/Local/Programs/MiKTeX/tex/latex/kvoptions/kvoptions.sty" 1602228096 22521 d2fceb764a442a2001d257ef11db7618 ""
   "C:/Users/Theodor/AppData/Local/Programs/MiKTeX/tex/latex/l3backend/l3backend-pdftex.def" 1613662212 27164 09c696e2ed5c5986662c62a27622e9cd ""
   "C:/Users/Theodor/AppData/Local/Programs/MiKTeX/tex/latex/psnfss/ot1ptm.fd" 1585257378 1007 15056f4a61917ceed3a44e4ac11fcc52 ""
-  "d:/Linux/Programming/Python/MachineLearning/research-proposal/paper/research-proposal.tex" 1621695326 5979 bb7b65d8d64553000787e12214033ffe ""
+  "d:/Linux/Programming/Python/MachineLearning/research-proposal/paper/research-proposal.tex" 1621708734 7531 1b0ee68bad1106a58d821d5d94542761 ""
   "images/cifar10_tp_scores.png" 1621410211 57105 91ddaea717cb65c4d567b01a39e349e3 ""
   "images/nec_confusion_matrix.png" 1621695408 75221 0e982e95175eca71d9003e09cdf84835 ""
-  "research-proposal.aux" 1621695410 933 31c912b9899023b8cba8e156284cb21d "pdflatex"
-  "research-proposal.tex" 1621695326 5979 bb7b65d8d64553000787e12214033ffe ""
+  "research-proposal.aux" 1621708738 1001 fe9e43e125b39a8d1e64a3d32667424f "pdflatex"
+  "research-proposal.tex" 1621708734 7531 1b0ee68bad1106a58d821d5d94542761 ""
   (generated)
-  "research-proposal.pdf"
   "research-proposal.aux"
+  "research-proposal.pdf"
   "research-proposal.log"
