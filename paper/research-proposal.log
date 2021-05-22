@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (MiKTeX 21.2) (preloaded format=pdflatex 2021.5.18)  20 MAY 2021 18:02
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (MiKTeX 21.2) (preloaded format=pdflatex 2021.5.18)  22 MAY 2021 16:56
 entering extended mode
 **d:/Linux/Programming/Python/MachineLearning/research-proposal/paper/research-proposal.tex
 (d:/Linux/Programming/Python/MachineLearning/research-proposal/paper/research-proposal.tex
@@ -194,24 +194,33 @@ File: images/cifar10_tp_scores.png Graphic file (type png)
 <use images/cifar10_tp_scores.png>
 Package pdftex.def Info: images/cifar10_tp_scores.png  used on input line 60.
 (pdftex.def)             Requested size: 252.0pt x 138.81433pt.
- [1{C:/Users/Theodor/AppData/Local/MiKTeX/pdftex/config/pdftex.map}
+<images/nec_confusion_matrix.png, id=3, 780.516pt x 722.7pt>
+File: images/nec_confusion_matrix.png Graphic file (type png)
+<use images/nec_confusion_matrix.png>
+Package pdftex.def Info: images/nec_confusion_matrix.png  used on input line 76.
+(pdftex.def)             Requested size: 252.0pt x 233.33086pt.
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+[1{C:/Users/Theodor/AppData/Local/MiKTeX/pdftex/config/pdftex.map}
 
 
  <./images/cifar10_tp_scores.png>] [2
 
-] (research-proposal.aux) ) 
+ <./images/nec_confusion_matrix.png>] (research-proposal.aux) ) 
 Here is how much of TeX's memory you used:
- 2516 strings out of 479334
- 44838 string characters out of 2856134
- 343373 words of memory out of 3000000
- 19967 multiletter control sequences out of 15000+200000
+ 2523 strings out of 479334
+ 45052 string characters out of 2856134
+ 344381 words of memory out of 3000000
+ 19973 multiletter control sequences out of 15000+200000
  433904 words of font info for 76 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
  72i,5n,78p,330b,251s stack positions out of 5000i,500n,10000p,200000b,50000s
 {C:/Users/Theodor/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/base/8r.enc}<C:/Users/Theodor/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/Theodor/AppData/Local/Programs/MiKTeX/fonts/type1/urw/times/utmb8a.pfb><C:/Users/Theodor/AppData/Local/Programs/MiKTeX/fonts/type1/urw/times/utmbi8a.pfb><C:/Users/Theodor/AppData/Local/Programs/MiKTeX/fonts/type1/urw/times/utmr8a.pfb><C:/Users/Theodor/AppData/Local/Programs/MiKTeX/fonts/type1/urw/times/utmri8a.pfb>
-Output written on research-proposal.pdf (2 pages, 109841 bytes).
+Output written on research-proposal.pdf (2 pages, 165578 bytes).
 PDF statistics:
- 33 PDF objects out of 1000 (max. 8388607)
+ 35 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
- 6 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 11 words of extra memory for PDF output out of 10000 (max. 10000000)
 

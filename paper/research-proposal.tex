@@ -53,9 +53,9 @@ the model can confuse their samples with each other what will often result in a 
 The question arises how to create loss weights for a model that gets trained on a balanced dataset. 
 When working with such datasets the learnability differences of the individual classes are mostly only identifiable after the model has been trained and evaluated normally.
 A confusion matrix or the calculation of the true positive rates then reveal what classes where learned the best and which should have received a higher weight.
-The figure 1 below shows the true positive rates of a an evaluated convolutional neural network [2] that was trained on the CIFAR-10 dataset, which contains 32 $\times$ 32 RGB images of ten different classes [3].
+The figure 1 below shows the true positive rates of a an evaluated convolutional neural network [2] that was trained on the CIFAR-10 dataset, which contains 32$\times$32 RGB images of ten different classes [3].
 This dataset is a good show case for the learnability imbalance problem since it contains similiar classes, such as \emph{dog} and \emph{cat} and will be used as one of the main datasets to run the research experiments on.
-
+ 
 \begin{figure}[h!]
         \includegraphics[width=\linewidth]{images/cifar10_tp_scores.png}
         \caption{true positive scores of a model trained on the CIFAR-10 dataset}
@@ -67,9 +67,16 @@ Looking at the true positive rates it can be seen that there are some classes th
 Since this dataset is mostly used to present experimental results and is, due to its small sample dimensions, a more simple classification task, 
 such a variance in the evaluations scores mostly doesn't matter. But when it comes to datasets that a model has to be trained on for a real world usecase 
 it is optimal to have a fair and unbiased class distribution. An example in natural language processing [4] is \emph{name-ethnicity classification} 
-where a model predicts the ethnicity of a name only by its letters [5]. Names from nationalities that speak the same language (e.g. english and american) result in a lower accuracy
-which therefore can lead to wrong interpretations of social sciences experiments. The figure 2 shows a low accuracy for the \emph{english} class which comes
-not only from the presence of the similiar \emph{american} class but also from other factors like the emigration of ancestors of the people whose names are in the dataset to england or america.
+where a model predicts the ethnicity of a name only by its letters [5]. Names from nationalities that speak the same language (e.g. british and american) result in a lower accuracy
+which therefore can lead to wrong interpretations when the model is used for social sciences experiments. The figure 2 shows a low accuracy for the \emph{british} class which comes
+especially from the presence of the similiar \emph{american} class.
+Therefore, additionally to the CIFAR-10 dataset, experiments on how to counteract learnability-imbalance will also be done on a name-nationality dataset using a recurrent neural network architecture [6].
+
+\begin{figure}[h!]
+        \includegraphics[width=\linewidth]{images/nec_confusion_matrix.png}
+        \caption{true positive scores of a model trained on the CIFAR-10 dataset}
+        \label{fig:tp2_scores}
+\end{figure}
 
 \section{state of the art}
 TODO first section here

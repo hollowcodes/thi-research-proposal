@@ -250,6 +250,13 @@ OUTPUT research-proposal.pdf
 INPUT .\images\cifar10_tp_scores.png
 INPUT .\images\cifar10_tp_scores.png
 INPUT .\images\cifar10_tp_scores.png
+INPUT .\images\nec_confusion_matrix.png
+INPUT .\images\nec_confusion_matrix.png
+INPUT images\nec_confusion_matrix.png
+INPUT .\images\nec_confusion_matrix.png
+INPUT .\images\nec_confusion_matrix.png
+INPUT .\images\nec_confusion_matrix.png
+INPUT .\images\nec_confusion_matrix.png
 INPUT C:\Users\Theodor\AppData\Local\Programs\MiKTeX\fonts\vf\adobe\times\ptmr7t.vf
 INPUT C:\Users\Theodor\AppData\Local\Programs\MiKTeX\fonts\tfm\adobe\times\ptmr8r.tfm
 INPUT C:\Users\Theodor\AppData\Local\MiKTeX\pdftex\config\pdftex.map

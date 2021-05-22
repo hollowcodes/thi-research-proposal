@@ -1,4 +1,11 @@
-datasets/preprocessed_datasets/*
-datasets/preprocessed_datasets/.gitkeep
-datasets/raw_datasets/*
-datasets/raw_datasets/.gitkeep
+experiments/cnn-experiment/dataset/preprocessed-dataset/*
+!experiments/cnn-experiment/dataset/preprocessed-dataset/.gitkeep
+
+experiments/cnn-experiment/dataset/raw-dataset/*
+!experiments/cnn-experiment/dataset/raw-dataset/.gitkeep
+
+experiments/rnn-experiment/dataset/preprocessed-dataset/*
+!experiments/rnn-experiment/dataset/preprocessed-dataset/.gitkeep
+
+experiments/rnn-experiment/dataset/raw-dataset/*
+!experiments/rnn-experiment/dataset/raw-dataset/.gitkeep

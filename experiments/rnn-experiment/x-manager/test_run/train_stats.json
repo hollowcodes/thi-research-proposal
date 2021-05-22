@@ -1,0 +1,13 @@
+{
+    "hyperparameters": {
+        "learning-rate": [
+            0.001
+        ]
+    },
+    "results": {
+        "train-accuracy": [],
+        "train-loss": [],
+        "validation-accuracy": [],
+        "validation-loss": []
+    }
+}
