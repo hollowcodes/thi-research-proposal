@@ -5,13 +5,17 @@
 \usepackage[utf8]{inputenc}
 \usepackage{algorithm}
 \usepackage{algorithmic}
+\usepackage{amsmath}
+%\usepackage[noend]{algpseudocode}
 
-\restylefloat{algorithm}
+%\usepackage[noend]{algpseudocode}
+
+%\restylefloat{algorithm}
 
 
 
 \begin{document}
-
+ 
 \title{\textbf{handling learnability imbalance in multiclass-classification}}
 
 
@@ -40,8 +44,10 @@ Therefore the goal is to find methods to lower the variance of the true positive
 
 
 \section{Introduction}
-A frequent problem in classification appears when working with a dataset that has an unequal amount of samples per class and is therefore called a \emph{class imbalanced} dataset.
-This causes that classes with less element are harder to learn, which won't only result in big differences in the true positive rates [1] of the classes but also in a lower, overall accuracy.
+A frequent problem in classification appears when working with datasets that have an unequal amount of samples per class and are therefore called a \emph{class imbalanced} datasets. %, where \emph{classes} describe the categories which the model has to classify.
+Since there will be some classes, that have less elements for the model to learn from, their features will be harder to extract what finally will result in a lower true positive rate, i.e. a per-class accuracy [1].
+Thus, the consequence of having different class sizes can be described as having a \emph{learnability imbalance} in the dataset since some classes are more difficult to learn that others.
+%Classes with less element are harder to learn, which won't only result in big differences in the true positive rates [1] of the individual classes but also in a lower, overall accuracy.
 %In order to prevent this, it is common to weight the error function [1] according to the size of each class, i.e. the number of samples it contains.
 %Therefore, for every class there is a weight, which is greater the fewer elements it contains and that gets multiplied with the loss produced by its samples. % "Therefore" wrong
 %Since the aim of a neural network is to minimize the overall loss and samples from a smaller class will produce a higher error, they will have a higher impact on the learning process in order to compensate for the different class sizes.
@@ -50,11 +56,14 @@ This causes that classes with less element are harder to learn, which won't only
 % This can prevent the model from learning the patterns of a class with less element worse than others.
 % With the evaluation a set of true positive rates can be calculated for each class which reveals what classes are more difficult to learn by the model and should have received a higher weight. 
 
-But this learnability imbalance appears also in balanced datasets for a variety of reasons, e.g. when the quality of the data of a class is lower than the rest of the data. 
-A second reason, that will be presented later on, is that when some classes are similiar, % "similiar objects"?
+But such learnability differences can appear also in balanced datasets for a variety of reasons, e.g. when the quality of the data of a class is lower than the rest of the data. 
+A second reason, that this research will be focused on, is that when some classes are similiar, % "similiar objects"?
 the model can confuse their samples with each other more easily what will often result in a lower accuracy of those classes.
-This issue is a light version of the imbalanced dataset problem and the inevitable product of every normal classification. 
-Even though in many cases the learnability difference of the classes is either low or not from great interest, there can be more extreme cases where the model needs to produce fair and unbiased results. 
+%This issue is an inevitable product of every normal classification.
+
+%This issue is a light version of the imbalanced dataset problem and the inevitable product of every normal classification. 
+Even though this issue is an inevitable product of every normal classification, in most cases the learnability difference of the classes is either low or not from great interest.
+But there can be more extreme cases where the model needs to produce fair and unbiased results using a dataset that has an obvious learnability imbalance. 
 An example is \emph{name-ethnicity classification}, where a model predicts the ethnicity of a name only by its letters [5]. 
 Nationalities that speak the same language and therfore have similiar names (e.g. \emph{british} and \emph{american}) result in a lower accuracy (see figure 1) which therefore can lead to wrong or unfair interpretations when the model is used for social sciences experiments. 
 
@@ -92,25 +101,60 @@ A confusion matrix or the calculation of the true positive rates can then reveal
 These rates can be used to determine which loss weights or how much data augmentation should be used for each class.
 
 
-
 \begin{algorithm}[H]
         \caption{creating loss weights for a balanced dataset}
-        \begin{algorithmic}[1]
 
-        \REQUIRE in
-        \ENSURE  out 
-        \\ \textit{initialise and train model}
-         \STATE model.train(data)
-        \\ \textit{evaluate model and return a set containing the true positive rates of all classes}
-         \STATE true-positive-scores = model.evaluate()
-        \\ \textit{create loss weights using the scores and some function W()}
-         \STATE loss-weights = W(true-positive-scores)
-        \\ \textit{reinitialize model and train again by weighting the loss}
-         \STATE mode.train(data, loss-weights)
-        \\ \textit{evaluate model and return a set containing the true positive rates of all classes}
-         \STATE true-positive-scores = model.evaluate()
+        \textit{\textbf{C} $\hat{=}$ amount of classes}
+        \\
+        %\\ \textit{\textbf{train(weights)} describes the initialization and the whole training process of a classification model using the loss-weights $weights$. \\$weights_i$ will be multiplied to every loss generated by a sample of class $i$.}
+        \\ \textit{\textbf{train(weights)} describes the initialization and training process of a classification model in which $weights_i$ will be multiplied to every loss generated by a sample of class $i$.}
+        \\
+        \\ \textit{\textbf{evaluate()} creates the set $s$ with $\left|s\right|$ = $C$ and $s_i \in [0;1]$ which contains the true positive scores of all classes of the test dataset}
+        \\
+        \\ \textit{\textbf{W(s)} is a function that creates a set of loss-weights $w$ with $\left|w\right|$ = $C$ and $w_i \in [0;1]$ using a set of true positive scores $s$: $W: s \rightarrow w$ ; $\{s_i,...,s_C\} \rightarrow \{w_i,...,w_C\}$ }
+        \\
+        \\ \textit{\textbf{process:}}
+        \begin{algorithmic}[1]
+         \STATE $train(weights=\{w_1=1, w_2=1, ..., w_c=1\}$)
+         \STATE $s = evaluate()$
+         \STATE $w = W(s)$
+         \STATE $train(weights=w)$
+         \STATE $s_{new} = evaluate()$
+         \STATE $compare(s, s_{new})$
+
         \end{algorithmic}
-        \end{algorithm}
+\end{algorithm}
+
+
+%\begin{algorithm}[H]
+%        \caption{creating loss weights for a balanced dataset}
+%        \begin{algorithmic}[1]
+%
+%         \STATE D $:=$ dataset\\
+%         \STATE L $:=$ loss(y, $\hat{y}$)\\
+%         \STATE W $:=$ calculateWeights(scores)\\
+%         \STATE classes $:=$ \{1, 2, ..., C ; C $\hat{=}$ amount of classes\}\\
+%         %\STATE class := $C_i$
+%         \textit{\textbf{forward}(x): describes the output of a neural network as a chained function with input x}\\
+%         \textit{\textbf{backward}(y, $\hat{y}$): describes the backpropagation of the loss function w.r.t. the parameters of the neural network}
+%         \textit{\textbf{evaluate}(): describes the calculation of the true positive rates of every class and returns a set with the length of C}\\
+%
+%        \\ \Procedure{train}{weights}
+%         \FOR{\textbf{each} (sample, target, class) in D}\\
+%                \STATE output := forward(sample)\\
+%                \STATE error := weights$_{class} *$ L(output, target)\\
+%                \STATE backward(error)\\
+%         \ENDFOR\\
+%         \EndProcedure\\
+%         \STATE train(weights=$\{w_1=1, w_2=1, ..., w_C=1\}$)
+%         \STATE truePositiveScores = evaluate()
+%         \STATE lossWeights = W(truePositiveScores)
+%         \STATE train(weights=lossWeights)
+%
+%
+%        \end{algorithmic}
+%\end{algorithm}
+
 
 %
 %
