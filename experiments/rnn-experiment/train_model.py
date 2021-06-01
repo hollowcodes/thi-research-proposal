@@ -279,7 +279,7 @@ def run_experiment(pre_true_positive_rates: list=None):
     if isinstance(pre_true_positive_rates, list):
         average = np.mean(pre_true_positive_rates)
 
-        loss_weights = [pow(1 - ((score - average) / score), 4) for score in pre_true_positive_rates]
+        loss_weights = [pow(1 - ((score - average) / score), 3) for score in pre_true_positive_rates]
         # loss_weights = [pow(2 - score, 4) for score in pre_true_positive_rates]
         print("training using weighted loss, weights: {}".format(loss_weights))
     else:
@@ -291,13 +291,13 @@ def run_experiment(pre_true_positive_rates: list=None):
             test_size=0.1,
             model_file="model1.pt",
             epochs=20,
-            batch_size=1024,
+            batch_size=512,
             lr_schedule=[0.001, 0.925, 100],
             rnn_config=[200, 2],
             cnn_config=[1, 3, [64]],
             dropout_chance=0.5,
             embedding_size=200,
-            augmentation_chance=0.25,
+            augmentation_chance=0.0,
             loss_weights=loss_weights,
             continue_=False)
 
@@ -309,6 +309,6 @@ def run_experiment(pre_true_positive_rates: list=None):
         
 
 
-run_experiment()
+# run_experiment()
 
-# run_experiment(pre_true_positive_rates=[0.6675007819831091, 0.8160847880299252, 0.5745752045311516, 0.8288201160541586, 0.8395534290271133])
+run_experiment(pre_true_positive_rates=[0.6675007819831091, 0.8160847880299252, 0.5745752045311516, 0.8288201160541586, 0.8395534290271133])

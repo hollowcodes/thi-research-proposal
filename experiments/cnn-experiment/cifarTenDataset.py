@@ -3,21 +3,22 @@ import torch
 import torchvision
 import numpy as np
 import imgaug.augmenters as iaa
-
+import random
+import matplotlib.pyplot as plt
 
 torch.manual_seed(0)
 
 
 class CifarTenDataset(torch.utils.data.Dataset):
-    def __init__(self, root_dir: str="", class_amount: int=10):
+    def __init__(self, dataset_path: str="", class_amount: int=10):
         """ constructor
-        :param str root_dir: dataset path
+        :param str dataset_path: dataset path
         :param int class_amount: amount of classes in the dataset
         """
 
-        self.root_dir = root_dir
+        self.dataset_path = dataset_path
         self.class_amount = class_amount
-        self.dataset = np.load(self.root_dir, allow_pickle=True)
+        self.dataset = np.load(self.dataset_path, allow_pickle=True)
 
     def _flip(self, image, chance: float=0.5):
         flip = iaa.Fliplr(chance)
@@ -68,7 +69,7 @@ def create_dataloader(dataset_path: str="", batch_size: int=32, class_amount: in
     :return torch.Dataloader: train-, val- and test-dataloader
     """
 
-    dataset = CifarTenDataset(root_dir=dataset_path, class_amount=class_amount)
+    dataset = CifarTenDataset(dataset_path=dataset_path, class_amount=class_amount)
     dataloader = torch.utils.data.DataLoader(
         dataset,
         batch_size=int(batch_size),
@@ -77,6 +78,39 @@ def create_dataloader(dataset_path: str="", batch_size: int=32, class_amount: in
     )
 
     return dataloader
+
+
+
+def visualize_augmentation(dataset_path: str=""):
+    dataset = np.load(dataset_path, allow_pickle=True)
+
+    rand_idx = random.randint(0, len(dataset) - 1)
+    print(rand_idx)
+    image = dataset[39258][0]
+
+    plt.rcParams["figure.figsize"] = 30, 30
+
+
+    augmented_images = []
+    augmented_images.extend(iaa.Sequential([iaa.Fliplr(1)])(images=[image]))
+    augmented_images.extend(iaa.AdditiveGaussianNoise(loc=0, scale=(0.0, 0.075*255), per_channel=0.5)(images=[image]))
+    #augmented_images.extend(iaa.GaussianBlur(sigma=(0, 0.75))(images=[image]))
+    augmented_images.extend(iaa.Crop(percent=(0, 0.25))(images=[image]))
+
+    #images = seq(images=[image])
+    fig, axs = plt.subplots(1, 3)
+    axs[0].imshow(augmented_images[0])
+    axs[1].imshow(augmented_images[1])
+    axs[2].imshow(augmented_images[2])
+    #axs[3].imshow(augmented_images[3])
+
+    #plt.imshow(augmented_images[0])
+    [axs[i].axis("off") for i in range(3)]
+    plt.show()
+
+
+visualize_augmentation("dataset/preprocessed-dataset/train_dataset.npy")
+
 
 
 

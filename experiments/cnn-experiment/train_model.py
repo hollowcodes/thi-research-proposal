@@ -10,6 +10,7 @@ import sklearn.metrics
 import torch
 import torch.utils.data
 import torch.nn as nn
+import torch.nn.functional as F
 
 from model import Model
 from utils import device, show_progress, lr_scheduler
@@ -17,6 +18,12 @@ from cifarTenDataset import create_dataloader
 from test_metrics import validate_accuracy, create_confusion_matrix, recall, precision, f1_score, score_plot, plot_weight_influence, true_positive_rate, plot_true_positive_rates
 import xman
 
+import sys, os, inspect
+currentdir = os.path.dirname(os.path.abspath(inspect.getfile(inspect.currentframe())))
+parentdir = os.path.dirname(currentdir)
+sys.path.insert(0, parentdir)
+
+from functions import FocalLoss
 
 torch.manual_seed(0)
 
@@ -62,18 +69,19 @@ class Run:
                             custom_parameters=self.hyperparameter_config)
 
     def _validate(self, model, dataset, confusion_matrix: bool=False, plot_scores: bool=False):
-        criterion = nn.CrossEntropyLoss()
+        criterion = FocalLoss(gamma=2)#nn.CrossEntropyLoss()
         
         losses = []
         total_targets, total_predictions = [], []
-        for names, targets in tqdm(dataset, desc="validating", ncols=150):
-            names = names.to(device=device)
+        for images, targets in tqdm(dataset, desc="validating", ncols=150):
+            images = images.to(device=device)
             targets = targets.to(device=device)
 
-            predictions = model.eval()(names)
+            predictions = model.eval()(images)
             loss = criterion(predictions, targets.squeeze())
             losses.append(loss.item())
 
+            predictions = F.softmax(predictions, dim=1)
             for i in range(predictions.size()[0]):
                 target_index = targets[i].cpu().detach().numpy()[0]
                 prediction = predictions[i].cpu().detach().numpy()
@@ -119,7 +127,7 @@ class Run:
             # self.lr = self.xmanager.get_last_lr()
 
         # loss and optimizer function
-        criterion = nn.CrossEntropyLoss(weight=self.loss_weights)
+        criterion = FocalLoss(gamma=2)#nn.CrossEntropyLoss(weight=self.loss_weights)
         optimizer = torch.optim.Adam(model.parameters(), lr=self.lr)
 
         # model iteration counter
@@ -155,7 +163,7 @@ class Run:
                 epoch_train_loss.append(loss.item())
                 
                 # log targets and prediction of every iteration to compute the accuracy later
-                validated_predictions = model.eval()(images)
+                validated_predictions = F.softmax(model.eval()(images), dim=1)
                 for i in range(validated_predictions.size()[0]): 
                     total_train_targets.append(targets[i].cpu().detach().numpy()[0])
                     validated_prediction = validated_predictions[i].cpu().detach().numpy()
@@ -169,7 +177,7 @@ class Run:
             epoch_train_accuracy = validate_accuracy(total_train_targets, total_train_predictions)
 
             # calculate validation loss and accuracy of last epoch
-            epoch_val_loss, epoch_val_accuracy, _ = self._validate(model, self.validation_dataset)
+            epoch_val_loss, epoch_val_accuracy, scores = self._validate(model, self.validation_dataset)
 
             # print training stats in pretty format
             show_progress(self.epochs, epoch, epoch_train_loss, epoch_train_accuracy, epoch_val_loss, epoch_val_accuracy)
@@ -253,7 +261,7 @@ def run_experiment(pre_true_positive_rates: list=None):
             model_file="models/model1.pt",
             dataset_name="preprocessed-dataset",
             classes={"airplane": 0, "automobile": 1, "bird": 2, "cat": 3, "deer": 4, "dog": 5, "frog": 6, "horse": 7, "ship": 8, "truck": 9},
-            epochs=2,
+            epochs=20,
             lr=0.001,
             lr_decay=(100, 0.925),
             batch_size=512,
@@ -267,9 +275,9 @@ def run_experiment(pre_true_positive_rates: list=None):
     run.test(print_examples=False, pre_true_positive_rates=pre_true_positive_rates)
 
 
-# run_experiment()
+run_experiment()
 
-run_experiment(pre_true_positive_rates=[0.8363273453093812, 0.9284294234592445, 0.7088846880907372, 0.6540755467196819, 0.7793522267206477, 0.7243589743589743, 0.8722943722943723, 0.8511066398390342, 0.854043392504931, 0.8899253731343284])
+# run_experiment(pre_true_positive_rates=[0.8363273453093812, 0.9284294234592445, 0.7088846880907372, 0.6540755467196819, 0.7793522267206477, 0.7243589743589743, 0.8722943722943723, 0.8511066398390342, 0.854043392504931, 0.8899253731343284])
 
 
 # 35 E - start 0.001 - lr 100 0.925

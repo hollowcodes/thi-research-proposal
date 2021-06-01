@@ -58,21 +58,21 @@ Thus, the consequence of having different class sizes can be described as having
 % This can prevent the model from learning the patterns of a class with less element worse than others.
 % With the evaluation a set of true positive rates can be calculated for each class which reveals what classes are more difficult to learn by the model and should have received a higher weight. 
 
-But such learnability differences can appear also in balanced datasets for a variety of reasons, e.g. when the quality of the data of a class is lower than the rest of the data % or when the classes come not from the distributions. 
-A second reason, that this research will be focused on, is that when some classes are similiar, % "similiar objects"?
-the model can confuse their samples with each other more easily what will often result in a lower accuracy of those classes.
+But such learnability differences can appear also in balanced datasets for a variety of reasons, e.g. when the quality of the data of a class is lower than the rest of the data. % or when the classes come not from the distributions. 
+A second reason, that this research will be focusing on, is that when some classes are similiar, % "similiar objects"?
+the model can confuse their samples with each other more easily which will often result in a lower accuracy of those classes.
 %This issue is an inevitable product of every normal classification.
 
 %This issue is a light version of the imbalanced dataset problem and the inevitable product of every normal classification. 
 Even though this issue is an inevitable product of every normal classification, in most cases the learnability difference of the classes is either low or not from great interest.
-But there can be more extreme cases where the model needs to produce fair and unbiased results using a dataset that has an obvious learnability imbalance. 
-An example is \emph{name-ethnicity classification}, where a model predicts the ethnicity of a name only by its letters [5]. 
+But there can be more extreme cases in which a model needs to produce fair and unbiased results using a dataset that has an obvious learnability imbalance. 
+An example for that is \emph{name-ethnicity classification}, where a model predicts the ethnicity of a name only by its letters [5]. 
 Nationalities that use the same language and therefore have similiar names (e.g. \emph{british} and \emph{american}) result in a lower accuracy (see figure 1).
-Thus, when a model that is trained on such a dataset is used, e.g. for social science experiments, it can produce unfair and biased results. 
+Thus, when a model that is trained on such a dataset is used, e.g. for social science experiments, it can lead to unfair results and wrong interpretations. 
 
 \begin{figure}[h!]
         \includegraphics[width=\linewidth]{images/Figure_1.png}
-        \caption{confusion matrix representing the true positive distribution of the name-nationality dataset produced by a recurrent neural network}
+        \caption{A confusion matrix representing the true positive distribution of the name-nationality dataset produced by a recurrent neural network and the confusion of british and american names}
         \label{fig:tp_scores}
 \end{figure}
 
@@ -146,12 +146,12 @@ Therefore, the proposed solutions to class imbalance are fundamental to this res
 
 Since it was used as a main example in the introducion, the first method to examine is loss weighting [N]. 
 This approach has proven itself to be a good way for archieving a lower variance in the per-class accuracies of unbalanced datasets and will be adapted to this research. 
-In general, the weights are chosen to be inversely proportional to the amount of samples in the classes [Na].
-The following formula 1 shows a proposed weight determination function of the paper [N]:
+In general, the weights are chosen to be inversely proportional to the amount of samples in the classes [Na], for example by using the function shown in forumla 1:
+%The following formula 1 shows a proposed weight determination function of the paper :
 
 \[ w_c = \frac{1-\beta^{N_c}}{1-\beta} \]
 
-This methods gets described as the \emph{effective number of samples} weight, where $N_c$ is the amount of samples of class $c$ and $\beta$ is a tuneable hyper-parameter with $\beta \in [0;1[$ .
+This method gets described as the \emph{effective number of samples} weight [N], where $N_c$ is the amount of samples of class $c$ and $\beta$ is a tuneable hyper-parameter with $\beta \in [0;1[$ .
 
 Formula 2 shows how to use such weights along with the cross entropy loss function [N] for one sample:
 %\[ \text{L}(x, c) = w_{c} \cdot \left(-\log\left(\text{P}(y_c|x, \theta)\right) \right) \]
@@ -163,23 +163,55 @@ Formula 2 shows how to use such weights along with the cross entropy loss functi
 %$\hat{y} := \{p_1, ..., p_C | C \hat{=} amount of classes\}$ is a probablity distribution and the output of a model $\text{F}(x, \theta)$ with learnable parameter $\theta$ and $C$ is the amount of classes.
 %Then $\hat{y_c}$ represents the confidence of the model that an input sample $x$ is corresponds to the correct class $c$.
 
-$\hat{y}$ is the output of a model $\text{F}(x, \theta)$ with learnable parameter $\theta$ and can be described as a probability distribution for which $\hat{y_i}$ is the confidence of the model, that the input sample $x$ corresponds to the $i$-th class.
+$\hat{y}$ is the output of a model $\text{F}(x, \theta)$ with input sample $x$ and learnable parameter $\theta$. 
+It be described as a probability distribution for which $\hat{y_i}$ is the confidence of the model, that the input $x$ corresponds to the $i$-th class.
 Therefore $\hat{y_c}$ represents the probability that the model correctly classified $x$ as the wanted class $c$. 
 As shown, the weight $w_c$ that corresponds to the correct class gets multiplied with the normal error value (in the case of cross entropy: the negative $\log$ of the probablity).
 
 %$\text{P}(y_c|x, \theta)$ is the confidence of a model $\text{F}(x, \theta)$ with learnable parameter $\theta$ that an input sample $x$ corresponds to the correct class $y_c$.
 %$\text{F}(x, \theta)$ outputs a probablity distribution which represents the confidence of every class and has the property $\sum_{i=0}^{C-1}P(y_i|x,\theta) = 1$ by using the softmax activation function [N]. The loss is then calculated by taking the negative $\log$ of only the probablity of the wanted class.
 
-Another loss weighting method is the so called \emph{focal loss}, which is especially interesting for this research because it uses the true positive rates instead of the sizes of the classes to generate the weights.
-But since it is also mainly tested and practiced on class imbalanced datasets, this research will investigate its effectiveness on class balanced datasets that have a learnability imbalance.
+Another loss weighting method is the so called \emph{focal loss} [N], which is especially interesting for this research because it uses the true positive rates instead of the sizes of the classes to generate the weights.
+But since it is also mainly tested and practiced on class imbalanced datasets, this research will investigate its effectiveness on class balanced datasets that have high learnability variances.
 The weight for the focal loss is defined as the following ($\gamma$ is a positive hyperparameter for scaling):
 \[ w_c = (1 - \hat{y}_c)^\gamma \]
 
 When multiplying this weight with the loss, it will be bigger, the smaller the confidence of the correct class was. 
 The adavantage of the focal loss over the proposed weight generation of this research is that it does not require a pre-training in order to figure out which classes a harder to learn, since it does this during the training process.
-But a hypothesis is, that this weighting could have less impact on learnability imbalanced datasets because it figures out the imbalance while training.
-In contrast to this, when training unweighted first, calculating the weights afterwards and training again with those weights, the loss function can start penalizing the classes differently from the beginning.
+But it can be hypothized that this weighting could have less impact on learnability imbalanced datasets because it figures out the imbalance while training.
+In contrast to this, when training unweighted first, calculating the weights afterwards and then train again with those weights, the loss function can start penalizing the classes differently right from the beginning.
 
+%Augmentation describes the random transformation of the samples, in order to synthetically generate more input data for the model. For example, in image classification it is common to randomly flip, mirror or to add white noise to the images [6].
+
+Another method is \emph{augmentation} [N], in which the input samples get randomly modified in order to synthetically generate more training samples and therefore help the model to generalize better. 
+For example, in image classification it is common to flip, mirror or to add white noise to the images. 
+The idea, originally proposed as \emph{SMOTE} (Synthetic Minority Over-sampling Technique) [N], is that such transformations can be used on smaller classes to provide the model with more of their samples.
+The same technique can be used on learnability imbalanced datasets but by orienting on the per-class accuracies instead of the class sizes.
+
+\begin{figure}[h!]
+        \includegraphics[width=\linewidth]{images/augmentation3.png}
+        \caption{An example of augmentation applied on a CIFAR-10 32$\times$32 image using the "imgaug" Python libary [N] (ltr: flip, gaussian noise, crop)}
+        \label{fig:augmentation}
+\end{figure}
+
+Another way to try to compensate for class imbalance is by doing \emph{oversampling} [N] where the model gets fed samples of the minority classes more often.
+%Even though \emph{undersampling} (the deletion of samples of big classes) is also an option in extreme cases, this method shows no reason to have a positive impact on learnability imbalance.
+%This is because the aim is to increase the true positive rates of harder to learn classes, which will most likely not happend by reducing the other classes. 
+%It will rather just reduce the accuracy of 
+
+Even though \emph{undersampling} (the ignoring of samples of big classes) is also an option in extreme cases, it is more likely to have an negative impact on the learnability imbalance.
+That's because, when reducing the size of easier to learn classes, it will probably result in the decrease of their accuracy without an increase of the accuracy of the other classes.
+This hypothesis will also be checked in this research.
+
+From the approaches mentioned above, the focal loss is the only one that can be tested on balanced datasets as it is. 
+The others require a pre-training in order to determine the learnability differences and therefore the true positive rates, which then can be used to estimate or calculate how much these methods should affect each class.
+
+
+
+
+
+
+%When working with unbalanced datasets this 
 %\[ \text{L}(x, c) = w_{c} \left(-y_{c} \cdot \log\left(N(x, \theta)\right) \right) \]
 
 
@@ -208,3 +240,4 @@ Name Name, Name Name, Name Name (2006). Title, 24(1), 29-33.
 % CEL: https://arxiv.org/ftp/arxiv/papers/2001/2001.00570.pdf
 % a: https://arxiv.org/pdf/1901.05555.pdf (p 4)
 % focal loss: https://arxiv.org/pdf/1708.02002.pdf
+% smote: https://arxiv.org/pdf/1106.1813.pdf

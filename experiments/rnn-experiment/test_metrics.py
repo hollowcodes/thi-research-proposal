@@ -9,7 +9,7 @@ import matplotlib.pyplot as plt
 # f1_scores = sklearn.metrics.f1_score(total_targets, total_predictions, average=None)
 
 plt.rcParams.update({"font.size": 25})
-plt.rcParams["figure.figsize"] = 10, 10
+plt.rcParams["figure.figsize"] = 5, 5
 
 
 def validate_accuracy(y_true: list, y_pred: list) -> float:

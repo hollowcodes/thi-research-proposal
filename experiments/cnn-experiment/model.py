@@ -81,7 +81,8 @@ class Model(nn.Module):
         
         x = F.relu(self.dense1(x))
         x = self.dropout(x)
-        x = F.softmax(self.dense2(x), dim=1)
+        x = self.dense2(x)
+        #x = F.softmax(self.dense2(x), dim=1)
 
         return x
 
