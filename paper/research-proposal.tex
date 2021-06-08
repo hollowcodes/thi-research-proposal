@@ -7,6 +7,7 @@
 \usepackage{algorithmic}
 \usepackage{amsmath}
 \usepackage{amssymb}
+\usepackage{caption}
 
 %\usepackage[noend]{algpseudocode}
 
@@ -37,7 +38,7 @@
 \begin{abstract}
 Neural Networks have proven themselves to be powerful classification
 tools by solving problems in a range of domains with high accuracy.
-Yet this accuracy is never evenly distributed across all classes, which means that the true-positive rates of each class separately are different.
+Yet this accuracy is never evenly distributed across all classes (i.e. the categories the model has to classify between), which means that the true-positive rates of each class separately are different.
 This can happen even in balanced datasets since some classes are more difficult to learn by the model than others (this phenomenon is further referred to as \emph{learnability-imbalance}).
 A common way to address this problem is to give a weight to the error function for each class to penalize losses of certain classes higher or lower.
 This research will address the determination of such weights to counteract the learnability-imbalance in balanced datasets using previously calculated evaluation scores.
@@ -48,7 +49,7 @@ Therefore the goal is to find methods to lower the variance of the true positive
 \section{Introduction}
 A frequent problem in classification appears when working with datasets that have an unequal amount of samples per class and are therefore called a \emph{class imbalanced} datasets. %, where \emph{classes} describe the categories which the model has to classify.
 Since there will be some classes, that have less elements for the model to learn from, their features will be harder to extract what finally will result in a lower true positive rate, i.e. a per-class accuracy [1].
-Thus, the consequence of having different class sizes can be described as having a \emph{learnability imbalance} in the dataset since some classes are more difficult to learn that others.
+Thus, the consequence of having different class sizes can be described as having a \emph{learnability imbalance} in the dataset, since some classes are more difficult to learn that others.
 %Classes with less element are harder to learn, which won't only result in big differences in the true positive rates [1] of the individual classes but also in a lower, overall accuracy.
 %In order to prevent this, it is common to weight the error function [1] according to the size of each class, i.e. the number of samples it contains.
 %Therefore, for every class there is a weight, which is greater the fewer elements it contains and that gets multiplied with the loss produced by its samples. % "Therefore" wrong
@@ -78,8 +79,7 @@ Thus, when a model that is trained on such a dataset is used, e.g. for social sc
 
 Another dataset that is a good showcase for the learnability imbalance is the CIFAR-10 [2] dataset (32$\times$32 RGB images of ten different classes) because it also contains similiar classes such as \emph{dog} and \emph{cat}.
 %Another dataset that is a good showcase for the learnability imbalance is the CIFAR-10 [2] dataset because in the 10 different classes which consist of 32x32 pixel images, there are also similiar ones such as \emph{dog} and \emph{cat}.
-When looking at the true positive rates produced by a convolutional neural network [3], trained on that dataset, it can be seen that there are some classes that got misclassified more often (in this case bird, cat, deer and dog) which hints to a more difficult learnability. 
-The CIFAR-10 and the name-nationality dataset will be used for experiments in order to find methods for minimizing such variances in the evaluation scores.
+The CIFAR-10, a name-nationality and a further tabular dataset will be used for experiments in order to find methods for minimizing such variances in the evaluation scores.
 
 %\begin{figure}[h!]
 %        \includegraphics[width=\linewidth]{images/cifar10_tp_scores.png}
@@ -92,25 +92,30 @@ The CIFAR-10 and the name-nationality dataset will be used for experiments in or
 
 To figure out such methods one should first go back to the class imbalance problem because there are already solutions existing.
 One of which is to weight the error function [1] according to the size of each class, i.e. the number of samples it contains.
-Therefore, for every class there is a weight, which is greater the fewer elements it contains and that gets multiplied with the loss produced by its samples. % "Therefore" wrong
+Therefore, there is a weight assigned to every class, which is greater the fewer elements it contains and that gets multiplied with the loss produced by its samples. % "Therefore" wrong
 %Since the aim of a neural network is to minimize the overall loss and samples from a smaller class will produce a higher error, they will have a higher impact on the learning process in order to compensate for the different class sizes.
-That will cause, that samples from a smaller class will produce a higher error and, since the aim of a neural network is to minimize the loss [4], will have a higher impact on the learning process.
+That will cause, that samples from a smaller class will produce a higher error and, since the aim of a neural network is to minimize the error [4], will receive a higher focues in the learning process.
 
-Other methods will be discussed when reviewing exisiting literature on this topic. 
+Other methods will be discussed in the literature review. 
 %Another way to try to compensate for the different class sizes is to use more augmentation [5] on the samples of smaller classes. 
 %Augmentation describes the random transformation of the samples, in order to synthetically generate more input data for the model. For example, in image classification it is common to randomly flip, mirror or to add white noise to the images [6].
-But since all of those approaches rely on the different proportions of the classes in the dataset it raises the question how to apply them on datasets that, even though they don't suffer from class imbalance, still show a big learnability imbalance.
+But almost all of the approaches to counteract class imbalance rely on the different proportions of the classes in the dataset. 
+This raises the question if and how they are appliable on datasets that, even though they don't suffer from class imbalance, still show a big learnability imbalance.
 When working with such datasets the learnability differences of the individual classes are mostly only identifiable after the model has been trained normally und unweighted. % and without any regard for the potential imbalance of the dataset. 
-The calculation of the true positive rates and visualization (e.g. confusion matrix) can then reveal what classes were learned the best and which should have received a higher weight.
-These evaluation scores can then be used to determine which loss weights or how much data augmentation should be used for each class (an example is shown in \emph{algorithm 1}).
+The calculation of the true positive rates and a visualization (e.g. confusion matrix) can then reveal what classes were learned the best and which should have received a higher weight.
+These evaluation scores can then be used, for example to determine which loss weights should be used for each class (an example is shown in \emph{algorithm 1}).
 
-In summary, this research will focus on creating and testing methods which use the true positive rate of each class in order to find out how much a class should be weighted or augmentated in order to counteract the learnability imbalance of the dataset.
+%In summary, this research will focus on creating and testing methods which use the true positive rate of each class in order to find out how much a class should be weighted or augmentated in order to counteract the learnability imbalance of the dataset.
+In summary, this research will focus on adapting the methods, that are used to counteract class imbalance, to the learnability imbalance problem of balanced datasets.
+This will be done by using the true positive rates produced by the evaluation of an independently pre-trained model.
+Instead of class sizes, these rates will be used as a measure for how much a method should affect each class.
+%, if the methods to counteract class imbalance can be applied on class balanced data
 
 %The aim is to increase the accuracy of classes which originally had a low one and decrease the accuracy of those which had a higher one, without decreasing the true positive rate of the whole test set 
 %(this can described as the per-class accuracies "meeting up in the middle" where the original overall accuracy lied).
-The aim is to bring all per-class accuracies to the same value by increasing the true positive rate of classes that are harder to learn 
-and decrease the rate of classes that more easily to learn.
-Further, it will address potential limitations and risks such as the reduction of the overall accuracy that could potentially happen from this process.
+The aim of the research is to find approaches that bring all per-class accuracies to nearly the same value by increasing those of classes that are harder to learn 
+and decrease them of classes that are more easily to learn without the reduction of the overall accuracy.
+Further, it will address potential limitations and risks that could potentially happen from this process.
 %This research will test which methods can be applied on the model with respect to the per-class rates.
 %Alogrithm 1 proposes a method to use true positive rates in order to create a set of loss weights which should be used to re-train the model with a higher focus on classes which a more difficult to learn.
 %The evaluation of that model will then produce a set that contains the score of each class, which will then
@@ -148,8 +153,11 @@ Since it was used as a main example in the introducion, the first method to exam
 This approach has proven itself to be a good way for archieving a lower variance in the per-class accuracies of unbalanced datasets and will be adapted to this research. 
 In general, the weights are chosen to be inversely proportional to the amount of samples in the classes [Na], for example by using the function shown in forumla 1:
 %The following formula 1 shows a proposed weight determination function of the paper :
-
 \[ w_c = \frac{1-\beta^{N_c}}{1-\beta} \]
+
+\emph{further normalization:}
+
+\[ w_c = \frac{C * w_c}{\sum_{i=1}^{C}w_i} \]
 
 This method gets described as the \emph{effective number of samples} weight [N], where $N_c$ is the amount of samples of class $c$ and $\beta$ is a tuneable hyper-parameter with $\beta \in [0;1[$ .
 
@@ -220,11 +228,80 @@ The others require a pre-training in order to determine the learnability differe
 %$\left|N(x, \theta)\right| = C$ is the probablity distribution calculated using the learnable parameters $\theta$.
 %The output $P(x|\theta) = N(x, \theta)$ is a probablity distribution with $\left|N(x, \theta)\right| = C$  $P(x = i|\theta)$ is the probablity that the input $x$ corresponds to class $i$.
 
-\section{approach}
-TODO second section here
+\section{methodology}
+In order to produce appropriate results, the proposed approach has to be applied on different models with different tasks. 
+There are three main diciplines: image, sequential data and tabular data classification. 
+When testing the approach on each task, the results can be interpreted more generalized. 
+But it can also reveal if it works better for one specific dicipline than for others. 
+If there is such a suspicion, the methods can be testes on more datasets of such diciplines.
 
-\section{third section}
-TODO third section here
+As already presented in the introduction, the approach will be tested on the CIFAR-10 dataset for image classification.
+It contains 60.000 32$\times$32 pixel RGB (i.e. channels for red, green and blue color) images, that are equally distributed among ten classes.
+This dataset is freely available and commonly used in computer vision research.
+The model architecture of the model will be a tradionional convolutional neural network [N] with residual connections [N].
+For testing the approach on sequential data, a name-ethnicity dataset will be used.
+This dataset was gathered by the government of United Kindom Of Great Britain and provided to one of the authors for a prior collaboration project based on name-ethnicity-classification.
+Within this research the maximum accuracy for this classification problem was reached by using a \emph{ConvLSTM} architecture [N], i.e. the combination of a convolutional neural network and a LSTM (long-short term memory) [N], which will also be used in this research. 
+Finally, the tabular dataset that will be used is the ------ dataset which contains of --------------- with --- classes.
+
+%The metric used to measure the effectiveness of the approach will be the difference of the variance of the per-class accruacies produced when training with weighting augmentation and without.
+The metric used for measuring how much a potential learnability imbalance impacted the model is the variance of the per-class accuracies.
+Therefore, the effectiveness of the proposed approach can be determined by the difference between the variances generated with and without the approach.
+
+\[ Var(s) = \frac{1}{C} \sum_{i=1}^{C} (s_i - \bar{s})^2 \]
+\[ D = Var(s) - Var(s') \]
+
+$s'$ are the true positive scores produced by a model using one of the proposed methods and $s$ of a model that was trained normally. 
+If $Var(s')$ is smaller that $Var(s)$, the approach showed a potential effectiveness.
+But if the difference is not significant, a staistical test must be performed in order to be sure that the reason for this difference was indeed the method.
+
+The experiments will be implemented in the \emph{Python} programming language and the models will be built and trained using the \emph{Pytorch} deep learning framework [N].
+In addition, an experiment manager, such as \emph{Weights\&Baises} [N], keeps the results in an orderly and accessible manner.
+
+%Further, all experiments will be performed using \emph{cross validation} [N].
+%That means that the dataset will be split into $K$ parts of which one is used for evaluating and the rest for training the neural network.
+%When the dataset is split randomly into two parts, the results of the model are dependent of the data it was trained on.
+%To be sure of the models results, it will be trained $K$ times independently and finally the evaluation scores will be averaged along all $K$ results.
+%In order to be sure, that the results are not good or bad because an unfortunate split of the dataset.
+
+\section{research plan}
+This research is expected to be completed in a short period and not consume many ressources.
+The reason for that is that the capacities (i.e. number of parameters) of the models used for the experiments are not high, since they don't need to reach state-of-the-art results.
+Additionally, since the datasets (which are already provided) are not particularly high dimensional, the experiments do not require high-end hardware and can be run in a short amount of time.
+
+The esitmated duration of this research is 13 months and will be performed in four stages, as shown in the table below.
+
+\begin{center}
+        \captionof{table}{schedule of research} 
+
+        \begin{tabular}{ |c|c|c|c| } 
+                \hline
+                stage & description & duration \\
+                \hline
+                %\multirow{3}{4em}{Multiple row} & cell2 & cell3 \\ 
+                1 & investigation & 4 months \\ 
+                2 & execution & 6 months \\ 
+                3 & revision & 2 months \\ 
+                4 & writing & 3 months \\
+                \hline
+
+        \end{tabular}
+\end{center}
+        
+In the first stage, the investigation, theoretical approaches are conceptualized by doing a more indepth literature review and adapting the proposed approaches to the learnablity imbalance problem. 
+The aim is to find several candidates for functions that produce loss weights, augmentation chances and oversampling amounts based on the true positive scores.
+This investigation gives also the opportunity to encounter previously unconsidered methods with which the research can be extended.
+
+The execution stage will begin by setting up the project code repository (link [N]). 
+It will contain the model architectures, train scripts and implementations of the conceived methods.
+Then the experiments will be run, the results collected and finally analyzed. 
+
+In the next stage, the revision, the used approaches and the results will be reviewed and compared. 
+After this process is finished, the last stage, the writing of the research paper can begin. 
+Presumably after three months, the paper can be submitted and is ready for reviewing. 
+
+\section{conclusion} 
+TODO fourth section here
 
 \begin{thebibliography}{1}
 
