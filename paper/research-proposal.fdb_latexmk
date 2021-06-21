@@ -1,5 +1,5 @@
 # Fdb version 3
-["pdflatex"] 1623755740 "d:/Linux/Programming/Python/MachineLearning/research-proposal/paper/research-proposal.tex" "research-proposal.pdf" "research-proposal" 1623755742
+["pdflatex"] 1624294420 "d:/Linux/Programming/Python/MachineLearning/research-proposal/paper/research-proposal.tex" "research-proposal.pdf" "research-proposal" 1624294452
   "C:/Users/Theodor/AppData/Local/MiKTeX/miktex/data/le/pdftex/pdflatex.fmt" 1621339262 9408413 555c74bd0465eaf25200ac7fcf4e0f30 ""
   "C:/Users/Theodor/AppData/Local/MiKTeX/pdftex/config/pdftex.map" 1622657168 82507 a9eef8696c92627b87e9975edea03b2a ""
   "C:/Users/Theodor/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/base/8r.enc" 1458477487 4993 80dc9bab7f31fb78a000ccfed0e27cab ""
@@ -71,12 +71,12 @@
   "C:/Users/Theodor/AppData/Local/Programs/MiKTeX/tex/latex/psnfss/ot1pcr.fd" 1585257378 1025 1ed784d7bfe47179f3550d2303b073f8 ""
   "C:/Users/Theodor/AppData/Local/Programs/MiKTeX/tex/latex/psnfss/ot1ptm.fd" 1585257378 1007 15056f4a61917ceed3a44e4ac11fcc52 ""
   "C:/Users/Theodor/AppData/Local/Programs/MiKTeX/tex/latex/xcolor/xcolor.sty" 1463135581 57049 34128738f682d033422ca125f82e5d62 ""
-  "d:/Linux/Programming/Python/MachineLearning/research-proposal/paper/research-proposal.tex" 1623755739 21197 2509dc50d8cf3bc0cd643deb882ea124 ""
+  "d:/Linux/Programming/Python/MachineLearning/research-proposal/paper/research-proposal.tex" 1624294451 22243 94b23386cc2564cf04c628462123d4d7 ""
   "images/Figure_1.png" 1622302990 67309 2e6e806de1b17452c9931e94136738f3 ""
   "images/tp_comparison.png" 1623401938 85763 41fd321abc857b42acefb03e55644f92 ""
-  "research-proposal.aux" 1623755741 1567 627f8a4af7a200ba566149fa79acf6c6 "pdflatex"
-  "research-proposal.tex" 1623755739 21197 2509dc50d8cf3bc0cd643deb882ea124 ""
+  "research-proposal.aux" 1624294422 1739 d2d1086cf0e811c257b234ec16f17dda "pdflatex"
+  "research-proposal.tex" 1624294451 22243 94b23386cc2564cf04c628462123d4d7 ""
   (generated)
-  "research-proposal.pdf"
   "research-proposal.aux"
+  "research-proposal.pdf"
   "research-proposal.log"
