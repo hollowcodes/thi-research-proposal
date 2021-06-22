@@ -10,6 +10,9 @@
 \usepackage{caption}
 \usepackage{xcolor}
 
+\usepackage[backend=biber, style=numeric, sorting=none]{biblatex}
+\addbibresource{references.bib}
+
 \captionsetup[figure]{font=small,labelfont=small}
 
 \begin{document}
@@ -49,7 +52,7 @@ to use the true positive rates of a previously, on the same data trained model i
 
 
 \section{Introduction}
-A frequent problem in classification appears when working with datasets that have an unequal amount of samples per class and are therefore called a \emph{class imbalanced} datasets [1]. %, where \emph{classes} describe the categories which the model has to classify.
+A frequent problem in classification appears when working with datasets that have an unequal amount of samples per class and are therefore called a \emph{class imbalanced} datasets \cite{japkowicz2002class}. %, where \emph{classes} describe the categories which the model has to classify.
 Since there will be some classes, that have less elements for the model to learn from, their features will be harder to extract what finally will result in a lower true positive rate, i.e. a per-class accuracy.
 Thus, the consequence of having different class sizes can be described as having a \emph{learnability imbalance} in the dataset, since some classes are more difficult to learn that others.
 
@@ -59,7 +62,7 @@ the model can confuse their samples with each other more easily which will often
 
 Even though this issue is an inevitable product of every normal classification, in most cases the learnability difference of the classes is either low or not from great interest.
 But there can be more extreme cases in which a model needs to produce fair and unbiased results using a dataset that has an obvious learnability imbalance. 
-An example for that is \emph{name-ethnicity classification}, where a model predicts the ethnicity of a name only by its letters [2]. 
+An example for that is \emph{name-ethnicity classification}, where a model predicts the ethnicity of a name only by its letters \cite{mateos2007review}. 
 Nationalities that use the same language and therefore have similiar names (e.g. \emph{british} and \emph{american}) result in a lower accuracy (see figure 1).
 Thus, when a model that is trained on such a dataset is used, e.g. for social science experiments, it can lead to unfair results and wrong interpretations. 
 
@@ -69,13 +72,13 @@ Thus, when a model that is trained on such a dataset is used, e.g. for social sc
         \label{fig:tp_scores}
 \end{figure}
 
-Another dataset that is a good showcase for the learnability imbalance is the CIFAR-10 [3] dataset (32$\times$32 RGB images of ten different classes) because it also contains similiar classes such as \emph{dog} and \emph{cat}.
+Another dataset that is a good showcase for the learnability imbalance is the CIFAR-10 \cite{krizhevsky2009learning} dataset (32$\times$32 RGB images of ten different classes) because it also contains similiar classes such as \emph{dog} and \emph{cat}.
 The CIFAR-10, a name-nationality and a further tabular dataset will be used for experiments in order to find methods for minimizing the variance in the evaluation scores.
 
 To find out such methods, one should first resort to the solutions of the class imbalance problem.
-One of them is the weighting of the error function [4] according to the size of each class, i.e. the number of samples it contains.
+One of them is the weighting of the error function [P] according to the size of each class, i.e. the number of samples it contains.
 Therefore, there is a weight assigned to every class, which is greater the fewer elements it contains and that gets multiplied with the loss produced by its samples. % "Therefore" wrong
-That will cause, that samples from a smaller class will produce a higher error and, since the aim of a neural network is to minimize the error [5], will receive a higher focus in the learning process.
+That will cause, that samples from a smaller class will produce a higher error and, since the aim of a neural network is to minimize the error \cite{rumelhart1985learning}, will receive a higher focus in the learning process.
 Other methods will be discussed in the literature review.
 
 Almost all of the approaches to counteract class imbalance rely on the different proportions of the classes in the dataset.
@@ -124,7 +127,7 @@ Therefore, the proposed solutions to class imbalance are fundamental to this res
 Since it was used as a main example in the introduction, the first method to examine is loss weighting. 
 This approach has proven itself to be a good way for archieving a lower variance in the per-class accuracies of unbalanced datasets and will be adapted to this research. 
 In general, the weights are chosen to be inversely proportional to the amount of samples in the classes [Na], in order to weight smaller classes more than bigger ones. 
-An example for a weight calculation function, proposed by Yin Cui et al. (2019) [6], is shown in forumla 1:
+An example for a weight calculation function, proposed by Yin Cui et al. \cite{cui2019class}, is shown in forumla 1:
 
 \[ w_c = \frac{1-\beta^{N_c}}{1-\beta} \]
 
@@ -143,7 +146,7 @@ It can be described as a probability distribution for which $\hat{y_i}$ is the c
 Therefore $\hat{y_c}$ represents the probability that the model correctly classified $x$ as the wanted class $c$. 
 As shown, the weight $w_c$ that corresponds to the correct class gets multiplied with the normal error value (in the case of cross entropy: the negative $\log$ of the probablity).
 
-Another loss weighting method is the so called \emph{focal loss} and was introduced by Tsung-Yi Lin et al. (2018) [7] in order to handle class imbalance in object detection.
+Another loss weighting method is the so called \emph{focal loss} and was introduced by Tsung-Yi Lin et al. \cite{lin2017focal} in order to handle class imbalance in object detection.
 This approach is especially interesting for this research because it uses the true positive rates instead of the sizes of the classes to generate the weights and can therefore be applied unchanged to the learnability imbalance problem.
 But since it is also mainly tested and practiced with class imbalanced datasets, this research will investigate its effectiveness on class balanced datasets that have high learnability variances.
 The weight for the focal loss is defined as the following ($\gamma$ is a positive hyperparameter for scaling):
@@ -156,7 +159,7 @@ In contrast to this, when training unweighted first, calculating the weights aft
 
 Another method is \emph{augmentation}, in which the input samples get randomly modified in order to synthetically generate more training samples and therefore help the model to generalize better. 
 For example, in image classification it is common to flip, crop or to add white noise to the images. 
-The idea, originally proposed as \emph{SMOTE} (Synthetic Minority Over-sampling Technique) by Nitesh V. Chawla et al. (2002) [8], is that such transformations can be used on smaller classes to provide the model with more of their samples.
+The idea, originally proposed as \emph{SMOTE} (Synthetic Minority Over-sampling Technique) by Nitesh V. Chawla et al. \cite{chawla2002smote}, is that such transformations can be used on smaller classes to provide the model with more of their samples.
 The same technique can be used on learnability imbalanced datasets but by applying it on classes with a lower per-class accuracy.
 
 % \begin{figure}[h!]
@@ -165,7 +168,7 @@ The same technique can be used on learnability imbalanced datasets but by applyi
 %         \label{fig:augmentation}
 % \end{figure}
 
-Another way to try to compensate for class imbalance is by doing \emph{oversampling} [8], where the model gets fed samples of the minority classes more often.
+Another way to try to compensate for class imbalance is by doing \emph{oversampling} \cite{chawla2002smote}, where the model gets fed samples of the minority classes more often.
 This method should be used if the data is not augmentable and therefore \emph{SMOTE} can't be applied.
 
 %Even though \emph{undersampling} (the ignoring of samples of big classes) is also an option in extreme cases, it is more likely to have an negative impact on the learnability imbalance.
@@ -185,10 +188,10 @@ If there is such a suspicion, the methods will be tested on even more datasets.
 As already mentioned in the introduction, to test the approaches on image classification the CIFAR-10 dataset will be used.
 It contains 60.000 32$\times$32 pixel RGB (i.e. channels for red, green and blue color) images, that are equally distributed among ten classes.
 This dataset is freely available and commonly used in computer vision research.
-The architecture of the model that will be trained on this dataset will be a convolutional neural network [9] with residual connections [10].
+The architecture of the model that will be trained on this dataset will be a convolutional neural network \cite{lecun1989backpropagation} with residual connections \cite{he2016deep}.
 For testing the approach on sequential data, a private name-ethnicity dataset will be used.
 This dataset was gathered by the government of Great Britain and provided to the author for a prior project based on name-ethnicity-classification.
-Within this project, the maximum accuracy for this classification problem was reached by using a \emph{ConvLSTM} architecture, i.e. the combination of a convolutional neural network and a LSTM (long-short term memory) [11], which will also be used in this research. 
+Within this project, the maximum accuracy for this classification problem was reached by using a \emph{ConvLSTM} architecture, i.e. the combination of a convolutional neural network and a LSTM (long-short term memory) \emph{gers2000learning}, which will also be used in this research. 
 Finally, the tabular dataset that will be used has yet to be chosen.
 
 The metric used for measuring how much a potential learnability imbalance impacted the model is the variance of the per-class accuracies.
@@ -201,7 +204,7 @@ $s'$ are the true positive scores produced by a model using one of the proposed 
 If $Var(s')$ is smaller that $Var(s)$, a approach showed a potential effectiveness.
 But if the difference is not significant, a statistical test must be performed in order to investigate if the reason for this difference was indeed the used method.
 
-The experiments will be implemented in the \emph{Python} programming language and the models will be built and trained using the \emph{Pytorch} deep learning framework [12].
+The experiments will be implemented in the \emph{Python} programming language and the models will be built and trained using the \emph{Pytorch} deep learning framework \cite{paszke2019pytorch}.
 In addition, an experiment manager, such as \emph{Weights\&Baises} [13], will keep the results in an orderly and accessible manner.
 
 \section{research plan}
@@ -242,51 +245,51 @@ After this process is finished, the last stage, the writing of the research pape
 Presumably after three months, the paper can be submitted.  
 
 
-\begin{thebibliography}{1}
-
-\bibitem{}
-Japkowicz, Nathalie and Stephen, Shaju. ‘The Class Imbalance Problem: A Systematic Study’. 1 Jan. 2002 : 429 – 449. % class imbalance
-
-\bibitem{}
-https://onlinelibrary.wiley.com/doi/abs/10.1002/psp.457 % name ethn. classification
-
-\bibitem{}
-https://www.cs.toronto.edu/~kriz/learning-features-2009-TR.pdf % CIFAR 10
-
-\bibitem{}
-<original loss weighting paper here> % loss weighting
-
-\bibitem{}
-https://apps.dtic.mil/sti/citations/ADA164453 % gradient descent
-
-\bibitem{}
-https://arxiv.org/pdf/1901.05555.pdf % loss weighting effective n. o. s.
-
-\bibitem{}
-https://arxiv.org/pdf/1708.02002.pdf % focal loss
-
-\bibitem{}
-https://arxiv.org/pdf/1106.1813.pdf % SMOTE
-
-\bibitem{}
-https://ieeexplore.ieee.org/document/6795724 % cnn
-
-\bibitem{}
-https://arxiv.org/abs/1512.03385 % resnet
-
-\bibitem{}
-https://ieeexplore.ieee.org/abstract/document/6789445 % lstm
-
-\bibitem{}
-https://papers.nips.cc/paper/2019/file/bdbca288fee7f92f2bfa9f7012727740-Paper.pdf % pytorch
-
-\bibitem{}
-https://wandb.ai/ % W&B
-
-
-\end{thebibliography}
+%\begin{thebibliography}
+%\end{thebibliography}
+\printbibliography
 
 \end{document}
+
+% \bibitem{}
+% Japkowicz, Nathalie and Stephen, Shaju. 'The Class Imbalance Problem: A Systematic Study'. 1 Jan. 2002 % : 429 – 449. % class imbalance
+% 
+% \bibitem{}
+% Mateos, Mateos. 'A review of name-based ethnicity classification methods and their potential in population studies'. Population, Space and Place, 13(4), 243–263. doi:10.1002/psp.457 
+% % https://onlinelibrary.wiley.com/doi/abs/10.1002/psp.457 % name ethn. classification
+% 
+% \bibitem{}
+% https://www.cs.toronto.edu/~kriz/learning-features-2009-TR.pdf % CIFAR 10
+% 
+% \bibitem{}
+% <original loss weighting paper here> % loss weighting
+% 
+% \bibitem{}
+% https://apps.dtic.mil/sti/citations/ADA164453 % gradient descent
+% 
+% \bibitem{}
+% https://arxiv.org/pdf/1901.05555.pdf % loss weighting effective n. o. s.
+% 
+% \bibitem{}
+% https://arxiv.org/pdf/1708.02002.pdf % focal loss
+% 
+% \bibitem{}
+% https://arxiv.org/pdf/1106.1813.pdf % SMOTE
+% 
+% \bibitem{}
+% https://ieeexplore.ieee.org/document/6795724 % cnn
+% 
+% \bibitem{}
+% https://arxiv.org/abs/1512.03385 % resnet
+% 
+% \bibitem{}
+% https://ieeexplore.ieee.org/abstract/document/6789445 % lstm
+% 
+% \bibitem{}
+% https://papers.nips.cc/paper/2019/file/bdbca288fee7f92f2bfa9f7012727740-Paper.pdf % pytorch
+% 
+% \bibitem{}
+% https://wandb.ai/ % W&B
 
 % biased class distribution: https://link.springer.com/chapter/10.1007/3-540-44795-4_45#:~:text=Labeled%20data%20for%20classification%20could,optimal%20classification%20on%20new%20data.
 % class imbalance over sampling: https://machinelearningmastery.com/random-oversampling-and-undersampling-for-imbalanced-classification/
