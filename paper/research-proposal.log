@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (MiKTeX 21.2) (preloaded format=pdflatex 2021.5.18)  22 JUN 2021 22:38
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (MiKTeX 21.2) (preloaded format=pdflatex 2021.5.18)  24 JUN 2021 14:42
 entering extended mode
 **d:/Linux/Programming/Python/MachineLearning/research-proposal/paper/research-proposal.tex
 (d:/Linux/Programming/Python/MachineLearning/research-proposal/paper/research-proposal.tex
@@ -559,17 +559,17 @@ Package biblatex Info: Reference segment=0 on input line 18.
 <images/Figure_1.png, id=1, 587.5551pt x 482.0409pt>
 File: images/Figure_1.png Graphic file (type png)
 <use images/Figure_1.png>
-Package pdftex.def Info: images/Figure_1.png  used on input line 70.
+Package pdftex.def Info: images/Figure_1.png  used on input line 61.
 (pdftex.def)             Requested size: 252.0pt x 206.74394pt.
 
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-LaTeX Font Info:    Trying to load font information for U+msa on input line 75.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 66.
 (C:\Users\Theodor\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 75.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 66.
  (C:\Users\Theodor\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
@@ -579,16 +579,21 @@ Underfull \vbox (badness 1817) has occurred while \output is active []
 
 
  <./images/Figure_1.png>]
-LaTeX Font Info:    Trying to load font information for OT1+pcr on input line 99.
+LaTeX Font Info:    Trying to load font information for OT1+pcr on input line 90.
  (C:\Users\Theodor\AppData\Local\Programs\MiKTeX\tex/latex/psnfss\ot1pcr.fd
 File: ot1pcr.fd 2001/06/04 font definitions for OT1/pcr.
 )
 <images/tp_comparison.png, id=13, 1151.9838pt x 687.2877pt>
 File: images/tp_comparison.png Graphic file (type png)
 <use images/tp_comparison.png>
-Package pdftex.def Info: images/tp_comparison.png  used on input line 114.
+Package pdftex.def Info: images/tp_comparison.png  used on input line 105.
 (pdftex.def)             Requested size: 252.0pt x 150.34381pt.
- [2 <./images/tp_comparison.png>] [3] [4
+ [2 <./images/tp_comparison.png>] [3]
+Underfull \hbox (badness 3323) in paragraph at lines 229--229
+[]\OT1/ptm/m/n/10 Theodor Peifer. \OT1/ptm/m/it/10 thi-research-proposal\OT1/ptm/m/n/10 . 2021. \OT1/ptm/m/sc/10 url\OT1/ptm/m/n/10 :
+ []
+
+[4
 
 ] (research-proposal.aux)
 Package logreq Info: Writing requests to 'research-proposal.run.xml'.
@@ -596,15 +601,15 @@ Package logreq Info: Writing requests to 'research-proposal.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 12954 strings out of 479334
- 235969 string characters out of 2856134
- 953826 words of memory out of 3000000
- 30272 multiletter control sequences out of 15000+200000
+ 12960 strings out of 479334
+ 236188 string characters out of 2856134
+ 953940 words of memory out of 3000000
+ 30278 multiletter control sequences out of 15000+200000
  439831 words of font info for 91 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
- 72i,6n,78p,818b,1312s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 72i,6n,78p,818b,1322s stack positions out of 5000i,500n,10000p,200000b,50000s
 {C:/Users/Theodor/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/base/8r.enc}<C:/Users/Theodor/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Users/Theodor/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Users/Theodor/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi5.pfb><C:/Users/Theodor/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi7.pfb><C:/Users/Theodor/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/Theodor/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr7.pfb><C:/Users/Theodor/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/Theodor/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy7.pfb><C:/Users/Theodor/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/symbols/msbm10.pfb><C:/Users/Theodor/AppData/Local/Programs/MiKTeX/fonts/type1/urw/courier/ucrr8a.pfb><C:/Users/Theodor/AppData/Local/Programs/MiKTeX/fonts/type1/urw/times/utmb8a.pfb><C:/Users/Theodor/AppData/Local/Programs/MiKTeX/fonts/type1/urw/times/utmbi8a.pfb><C:/Users/Theodor/AppData/Local/Programs/MiKTeX/fonts/type1/urw/times/utmr8a.pfb><C:/Users/Theodor/AppData/Local/Programs/MiKTeX/fonts/type1/urw/times/utmri8a.pfb>
-Output written on research-proposal.pdf (4 pages, 276677 bytes).
+Output written on research-proposal.pdf (4 pages, 277995 bytes).
 PDF statistics:
  77 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)

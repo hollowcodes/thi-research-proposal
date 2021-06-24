@@ -82,7 +82,7 @@
       \field{pages}{243\bibrangedash 263}
       \range{pages}{21}
     \endentry
-    \entry{krizhevsky2009learning}{article}{}
+    \entry{krizhevsky2009learning}{online}{}
       \true{moreauthor}
       \true{morelabelname}
       \name{author}{2}{}{%
@@ -112,41 +112,6 @@
       \field{labeltitlesource}{title}
       \field{title}{Learning multiple layers of features from tiny images}
       \field{year}{2009}
-    \endentry
-    \entry{rumelhart1985learning}{report}{}
-      \name{author}{3}{}{%
-        {{hash=55cd5380bb5b15032a6d5a2015f56e3f}{%
-           family={Rumelhart},
-           familyi={R\bibinitperiod},
-           given={David\bibnamedelima E},
-           giveni={D\bibinitperiod\bibinitdelim E\bibinitperiod}}}%
-        {{hash=813bd95fe553e6079cd53a567b238287}{%
-           family={Hinton},
-           familyi={H\bibinitperiod},
-           given={Geoffrey\bibnamedelima E},
-           giveni={G\bibinitperiod\bibinitdelim E\bibinitperiod}}}%
-        {{hash=6cbc29ad7fd57ffdb9ed4728418fd988}{%
-           family={Williams},
-           familyi={W\bibinitperiod},
-           given={Ronald\bibnamedelima J},
-           giveni={R\bibinitperiod\bibinitdelim J\bibinitperiod}}}%
-      }
-      \list{institution}{1}{%
-        {California Univ San Diego La Jolla Inst for Cognitive Science}%
-      }
-      \strng{namehash}{fd75cea68d6982b503a0cd84f7cc7b51}
-      \strng{fullhash}{fd75cea68d6982b503a0cd84f7cc7b51}
-      \strng{bibnamehash}{fd75cea68d6982b503a0cd84f7cc7b51}
-      \strng{authorbibnamehash}{fd75cea68d6982b503a0cd84f7cc7b51}
-      \strng{authornamehash}{fd75cea68d6982b503a0cd84f7cc7b51}
-      \strng{authorfullhash}{fd75cea68d6982b503a0cd84f7cc7b51}
-      \field{sortinit}{4}
-      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{title}{Learning internal representations by error propagation}
-      \field{type}{techreport}
-      \field{year}{1985}
     \endentry
     \entry{cui2019class}{inproceedings}{}
       \name{author}{5}{}{%
@@ -182,8 +147,8 @@
       \strng{authorbibnamehash}{f262ac35f1a3f67ea903a3b480acab47}
       \strng{authornamehash}{f262ac35f1a3f67ea903a3b480acab47}
       \strng{authorfullhash}{a4eb02089423af25374823ef9bfd770b}
-      \field{sortinit}{5}
-      \field{sortinithash}{20e9b4b0b173788c5dace24730f47d8c}
+      \field{sortinit}{4}
+      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{booktitle}{Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition}
@@ -191,6 +156,41 @@
       \field{year}{2019}
       \field{pages}{9268\bibrangedash 9277}
       \range{pages}{10}
+    \endentry
+    \entry{rumelhart1985learning}{report}{}
+      \name{author}{3}{}{%
+        {{hash=55cd5380bb5b15032a6d5a2015f56e3f}{%
+           family={Rumelhart},
+           familyi={R\bibinitperiod},
+           given={David\bibnamedelima E},
+           giveni={D\bibinitperiod\bibinitdelim E\bibinitperiod}}}%
+        {{hash=813bd95fe553e6079cd53a567b238287}{%
+           family={Hinton},
+           familyi={H\bibinitperiod},
+           given={Geoffrey\bibnamedelima E},
+           giveni={G\bibinitperiod\bibinitdelim E\bibinitperiod}}}%
+        {{hash=6cbc29ad7fd57ffdb9ed4728418fd988}{%
+           family={Williams},
+           familyi={W\bibinitperiod},
+           given={Ronald\bibnamedelima J},
+           giveni={R\bibinitperiod\bibinitdelim J\bibinitperiod}}}%
+      }
+      \list{institution}{1}{%
+        {California Univ San Diego La Jolla Inst for Cognitive Science}%
+      }
+      \strng{namehash}{fd75cea68d6982b503a0cd84f7cc7b51}
+      \strng{fullhash}{fd75cea68d6982b503a0cd84f7cc7b51}
+      \strng{bibnamehash}{fd75cea68d6982b503a0cd84f7cc7b51}
+      \strng{authorbibnamehash}{fd75cea68d6982b503a0cd84f7cc7b51}
+      \strng{authornamehash}{fd75cea68d6982b503a0cd84f7cc7b51}
+      \strng{authorfullhash}{fd75cea68d6982b503a0cd84f7cc7b51}
+      \field{sortinit}{5}
+      \field{sortinithash}{20e9b4b0b173788c5dace24730f47d8c}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Learning internal representations by error propagation}
+      \field{type}{techreport}
+      \field{year}{1985}
     \endentry
     \entry{lin2017focal}{inproceedings}{}
       \name{author}{5}{}{%
@@ -226,8 +226,8 @@
       \strng{authorbibnamehash}{3b7e00bc88d7aca4d4d5ddb8c252e36c}
       \strng{authornamehash}{3b7e00bc88d7aca4d4d5ddb8c252e36c}
       \strng{authorfullhash}{4ccabcfdf9c34f3d9a88fdca5bb95dd5}
-      \field{sortinit}{6}
-      \field{sortinithash}{b33bc299efb3c36abec520a4c896a66d}
+      \field{sortinit}{7}
+      \field{sortinithash}{108d0be1b1bee9773a1173443802c0a3}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{booktitle}{Proceedings of the IEEE international conference on computer vision}
@@ -265,8 +265,8 @@
       \strng{authorbibnamehash}{6bcc313fb25bc61f74b62ca709ae4b05}
       \strng{authornamehash}{6bcc313fb25bc61f74b62ca709ae4b05}
       \strng{authorfullhash}{c8dfb87590a41f2f9294282b456dede4}
-      \field{sortinit}{7}
-      \field{sortinithash}{108d0be1b1bee9773a1173443802c0a3}
+      \field{sortinit}{8}
+      \field{sortinithash}{a231b008ebf0ecbe0b4d96dcc159445f}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{journaltitle}{Journal of artificial intelligence research}
@@ -323,8 +323,8 @@
       \strng{authorbibnamehash}{9e4c6012409dc8dd9b2aa198a2059804}
       \strng{authornamehash}{9e4c6012409dc8dd9b2aa198a2059804}
       \strng{authorfullhash}{db03602b955b0c9b23b4bd012343619d}
-      \field{sortinit}{9}
-      \field{sortinithash}{0a5ebc79d83c96b6579069544c73c7d4}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{journaltitle}{Neural computation}
@@ -442,6 +442,68 @@
       \field{journaltitle}{arXiv preprint arXiv:1912.01703}
       \field{title}{Pytorch: An imperative style, high-performance deep learning library}
       \field{year}{2019}
+    \endentry
+    \entry{WandB}{online}{}
+      \name{author}{1}{}{%
+        {{hash=1a3c70d9006d3990ca280beb44d59059}{%
+           family={Biases},
+           familyi={B\bibinitperiod},
+           given={Weights\bibnamedelima \&},
+           giveni={W\bibinitperiod\bibinitdelim \\bibinitperiod}}}%
+      }
+      \strng{namehash}{1a3c70d9006d3990ca280beb44d59059}
+      \strng{fullhash}{1a3c70d9006d3990ca280beb44d59059}
+      \strng{bibnamehash}{1a3c70d9006d3990ca280beb44d59059}
+      \strng{authorbibnamehash}{1a3c70d9006d3990ca280beb44d59059}
+      \strng{authornamehash}{1a3c70d9006d3990ca280beb44d59059}
+      \strng{authorfullhash}{1a3c70d9006d3990ca280beb44d59059}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Weights \& Biases: Tools for ML - Build Better ML Models Faster}
+      \field{urlday}{23}
+      \field{urlmonth}{9}
+      \field{urlyear}{2021}
+      \field{year}{2018}
+      \field{urldateera}{ce}
+      \verb{urlraw}
+      \verb https://wandb.ai/site
+      \endverb
+      \verb{url}
+      \verb https://wandb.ai/site
+      \endverb
+    \endentry
+    \entry{githubResearchProposal}{online}{}
+      \name{author}{1}{}{%
+        {{hash=af4fbb4cd35f15a41ec49db5f3f39a61}{%
+           family={Peifer},
+           familyi={P\bibinitperiod},
+           given={Theodor},
+           giveni={T\bibinitperiod}}}%
+      }
+      \strng{namehash}{af4fbb4cd35f15a41ec49db5f3f39a61}
+      \strng{fullhash}{af4fbb4cd35f15a41ec49db5f3f39a61}
+      \strng{bibnamehash}{af4fbb4cd35f15a41ec49db5f3f39a61}
+      \strng{authorbibnamehash}{af4fbb4cd35f15a41ec49db5f3f39a61}
+      \strng{authornamehash}{af4fbb4cd35f15a41ec49db5f3f39a61}
+      \strng{authorfullhash}{af4fbb4cd35f15a41ec49db5f3f39a61}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{thi-research-proposal}
+      \field{urlday}{23}
+      \field{urlmonth}{9}
+      \field{urlyear}{2021}
+      \field{year}{2021}
+      \field{urldateera}{ce}
+      \verb{urlraw}
+      \verb https://github.com/hollowcodes/thi-research-proposal
+      \endverb
+      \verb{url}
+      \verb https://github.com/hollowcodes/thi-research-proposal
+      \endverb
     \endentry
   \enddatalist
 \endrefsection

@@ -1,15 +1,15 @@
 [0] Config.pm:311> INFO - This is Biber 2.16
 [0] Config.pm:314> INFO - Logfile is 'research-proposal.blg'
-[162] biber-MSWIN64:340> INFO - === 
-[225] Biber.pm:415> INFO - Reading 'research-proposal.bcf'
-[396] Biber.pm:952> INFO - Found 10 citekeys in bib section 0
-[418] Biber.pm:4340> INFO - Processing section 0
-[433] Biber.pm:4531> INFO - Looking for bibtex format file 'references.bib' for section 0
-[527] bibtex.pm:1689> INFO - LaTeX decoding ...
-[547] bibtex.pm:1494> INFO - Found BibTeX data source 'references.bib'
-[687] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'normalization = NFD' with 'normalization = prenormalized'
-[687] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'variable = shifted' with 'variable = non-ignorable'
-[687] Biber.pm:4168> INFO - Sorting list 'none/global//global/global' of type 'entry' with template 'none' and locale 'en-US'
-[687] Biber.pm:4174> INFO - No sort tailoring available for locale 'en-US'
-[697] bbl.pm:654> INFO - Writing 'research-proposal.bbl' with encoding 'UTF-8'
-[706] bbl.pm:757> INFO - Output to research-proposal.bbl
+[245] biber-MSWIN64:340> INFO - === 
+[344] Biber.pm:415> INFO - Reading 'research-proposal.bcf'
+[512] Biber.pm:952> INFO - Found 12 citekeys in bib section 0
+[534] Biber.pm:4340> INFO - Processing section 0
+[561] Biber.pm:4531> INFO - Looking for bibtex format file 'references.bib' for section 0
+[638] bibtex.pm:1689> INFO - LaTeX decoding ...
+[664] bibtex.pm:1494> INFO - Found BibTeX data source 'references.bib'
+[840] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'variable = shifted' with 'variable = non-ignorable'
+[840] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'normalization = NFD' with 'normalization = prenormalized'
+[840] Biber.pm:4168> INFO - Sorting list 'none/global//global/global' of type 'entry' with template 'none' and locale 'en-US'
+[840] Biber.pm:4174> INFO - No sort tailoring available for locale 'en-US'
+[884] bbl.pm:654> INFO - Writing 'research-proposal.bbl' with encoding 'UTF-8'
+[894] bbl.pm:757> INFO - Output to research-proposal.bbl

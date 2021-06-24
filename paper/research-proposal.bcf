@@ -2347,14 +2347,17 @@
     <bcf:citekey order="1">japkowicz2002class</bcf:citekey>
     <bcf:citekey order="2">mateos2007review</bcf:citekey>
     <bcf:citekey order="3">krizhevsky2009learning</bcf:citekey>
-    <bcf:citekey order="4">rumelhart1985learning</bcf:citekey>
-    <bcf:citekey order="5">cui2019class</bcf:citekey>
-    <bcf:citekey order="6">lin2017focal</bcf:citekey>
-    <bcf:citekey order="7">chawla2002smote</bcf:citekey>
+    <bcf:citekey order="4">cui2019class</bcf:citekey>
+    <bcf:citekey order="5">rumelhart1985learning</bcf:citekey>
+    <bcf:citekey order="6">cui2019class</bcf:citekey>
+    <bcf:citekey order="7">lin2017focal</bcf:citekey>
     <bcf:citekey order="8">chawla2002smote</bcf:citekey>
-    <bcf:citekey order="9">lecun1989backpropagation</bcf:citekey>
-    <bcf:citekey order="10">he2016deep</bcf:citekey>
-    <bcf:citekey order="11">paszke2019pytorch</bcf:citekey>
+    <bcf:citekey order="9">chawla2002smote</bcf:citekey>
+    <bcf:citekey order="10">lecun1989backpropagation</bcf:citekey>
+    <bcf:citekey order="11">he2016deep</bcf:citekey>
+    <bcf:citekey order="12">paszke2019pytorch</bcf:citekey>
+    <bcf:citekey order="13">WandB</bcf:citekey>
+    <bcf:citekey order="14">githubResearchProposal</bcf:citekey>
   </bcf:section>
   <!-- SORTING TEMPLATES -->
   <bcf:sortingtemplate name="none">
