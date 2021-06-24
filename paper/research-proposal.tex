@@ -32,7 +32,7 @@
 \begin{abstract}
 Neural Networks have proven themselves to be powerful classification
 models by solving problems in a range of domains with high accuracy.
-Yet, this accuracy is never evenly distributed across all classes, which means that the true-positive rates of each class differ.
+Yet, this accuracy is never evenly distributed across all classes, which means that the true positive rates of each class differ.
 Although this problem is most common and severe when working with class imbalanced datasets, it can also occur with balanced datasets.
 This is because there are always classes that are more difficult for the model to learn than others (this phenomenon is further referred to as \emph{learnability-imbalance}).
 This research will examine whether and how the methods to counteract class imbalance can be adapted to the more general problem of learnability imbalance.
@@ -52,7 +52,7 @@ A second reason, that this research will be focusing on, is that when some class
 the model can confuse their samples with each other more easily which will often result in a lower accuracy of those classes.
 
 Even though this issue is an inevitable product of every normal classification, in most cases the learnability difference of the classes is either low or not of great interest.
-But there are more extreme cases in which a model needs to produce fair and unbiased results, though, using a dataset that has an obvious learnability imbalance. 
+But there are more extreme cases in which a model needs to produce fair and unbiased results, even though it has to be trained on a dataset that has an obvious learnability imbalance. 
 An example for that is \emph{name-ethnicity classification}, where a model predicts the ethnicity of a name only by its letters \cite{mateos2007review}. 
 Nationalities that use the same language and therefore have similar names (e.g. \emph{British} and \emph{American}) result in a lower accuracy (see figure 1).
 Thus, when a model trained on such a dataset is used, e.g. for social science experiments, it can lead to unfair results and wrong interpretations. 
@@ -178,8 +178,8 @@ Within this project, the maximum accuracy for this classification problem was re
 Finally, the tabular dataset, which will be used, has yet to be chosen.
 
 The functions, which will produce loss weights or oversampling chances, are created similarly to the \emph{effective number of samples} loss weighting technique. 
-For a class with a lower true positive score, the functions should provide a larger value. 
-The following formula (4) shows a possible loss weight generation function that this research will use ($\gamma$ is a positive hyperparameter for scaling):
+For a class with a lower true positive score, the functions should generate a larger value. 
+The following formula (4) shows a possible loss weight generation function that this research will work with ($\gamma$ is a positive hyperparameter for scaling):
 
 \[ w_c = \left(1-\left(\frac{s_c - \bar{s}}{s_c}\right)\right)^\gamma \text{ .} \]
 
@@ -204,8 +204,6 @@ The reason for that is that the capacities (i.e. number of parameters) of the mo
 Additionally, the datasets (which are already provided) are not particularly high dimensional and consist of a manageable number of samples.
 Therefore, the experiments do not require high-end hardware and can be run in a short amount of time.
 
-The estimated duration of this research is 14 months and will be performed in four stages, as shown in the table below.
-
 \begin{center}
         \captionof{table}{schedule of research} 
 
@@ -221,7 +219,8 @@ The estimated duration of this research is 14 months and will be performed in fo
 
         \end{tabular}
 \end{center}
-        
+The estimated duration of this research is 14 months and will be performed in four stages, as shown in the table above.
+
 In the first stage, the investigation, theoretical approaches are conceptualized by doing a more in depth literature review and adapting the proposed approaches to the learnability imbalance problem. 
 The aim is to find several candidates for functions that produce loss weights, augmentation and oversampling chances based on the true positive scores.
 This investigation also gives the opportunity to encounter previously unconsidered methods with which the research can be extended.
