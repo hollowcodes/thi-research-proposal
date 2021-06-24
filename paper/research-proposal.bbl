@@ -374,6 +374,45 @@
       \field{pages}{770\bibrangedash 778}
       \range{pages}{9}
     \endentry
+    \entry{gers2000learning}{article}{}
+      \name{author}{3}{}{%
+        {{hash=805aa8bd8070a9c87d87ba3588da7bab}{%
+           family={Gers},
+           familyi={G\bibinitperiod},
+           given={Felix\bibnamedelima A},
+           giveni={F\bibinitperiod\bibinitdelim A\bibinitperiod}}}%
+        {{hash=288bdbcfe1b91ad7484d7a24f74f99ed}{%
+           family={Schmidhuber},
+           familyi={S\bibinitperiod},
+           given={Jürgen},
+           giveni={J\bibinitperiod}}}%
+        {{hash=bdd8ffd78b64a16f8c61071ba7af7225}{%
+           family={Cummins},
+           familyi={C\bibinitperiod},
+           given={Fred},
+           giveni={F\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {MIT Press}%
+      }
+      \strng{namehash}{f90ec3965a97856f5e2b784e9481582a}
+      \strng{fullhash}{f90ec3965a97856f5e2b784e9481582a}
+      \strng{bibnamehash}{f90ec3965a97856f5e2b784e9481582a}
+      \strng{authorbibnamehash}{f90ec3965a97856f5e2b784e9481582a}
+      \strng{authornamehash}{f90ec3965a97856f5e2b784e9481582a}
+      \strng{authorfullhash}{f90ec3965a97856f5e2b784e9481582a}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Neural computation}
+      \field{number}{10}
+      \field{title}{Learning to forget: Continual prediction with LSTM}
+      \field{volume}{12}
+      \field{year}{2000}
+      \field{pages}{2451\bibrangedash 2471}
+      \range{pages}{21}
+    \endentry
     \entry{paszke2019pytorch}{article}{}
       \true{moreauthor}
       \true{morelabelname}

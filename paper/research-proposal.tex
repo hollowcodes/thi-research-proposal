@@ -32,7 +32,7 @@
 \begin{abstract}
 Neural Networks have proven themselves to be powerful classification
 models by solving problems in a range of domains with high accuracy.
-Yet this accuracy is never evenly distributed across all classes, which means that the true-positive rates of each class differ.
+Yet, this accuracy is never evenly distributed across all classes, which means that the true-positive rates of each class differ.
 Although this problem is most common and severe when working with class imbalanced datasets, it can also occur with balanced datasets.
 This is because there are always classes that are more difficult for the model to learn than others (this phenomenon is further referred to as \emph{learnability-imbalance}).
 This research will examine whether and how the methods to counteract class imbalance can be adapted to the more general problem of learnability imbalance.
@@ -44,26 +44,27 @@ to use the true positive rates of a model previously trained on the same dataset
 
 \section{Introduction}
 A frequent problem in classification appears when working with datasets that have an unequal number of samples per class and are therefore called a \emph{class imbalanced} datasets \cite{japkowicz2002class}.
-Since there will be some classes, that have less elements for the model to learn from, their features will be harder to extract what finally will result in a lower true positive rate, i.e. a per-class accuracy.
+Since there will be some classes, that have fewer elements for the model to learn from, their features will be harder to extract what finally will result in a lower true positive rate, i.e. a per-class accuracy.
 Thus, the consequence of having different class sizes can be described as having a \emph{learnability imbalance} in the dataset, since some classes are more difficult to learn that others.
 
 However, such learnability differences can appear also in balanced datasets for a variety of reasons, e.g. when the quality of the data of a class is lower than the rest of the data.
-A second reason, that this research will be focusing on, is that when some classes are similiar,
+A second reason, that this research will be focusing on, is that when some classes are similar,
 the model can confuse their samples with each other more easily which will often result in a lower accuracy of those classes.
 
 Even though this issue is an inevitable product of every normal classification, in most cases the learnability difference of the classes is either low or not of great interest.
 But there are more extreme cases in which a model needs to produce fair and unbiased results, though, using a dataset that has an obvious learnability imbalance. 
 An example for that is \emph{name-ethnicity classification}, where a model predicts the ethnicity of a name only by its letters \cite{mateos2007review}. 
-Nationalities that use the same language and therefore have similiar names (e.g. \emph{british} and \emph{american}) result in a lower accuracy (see figure 1).
+Nationalities that use the same language and therefore have similar names (e.g. \emph{British} and \emph{American}) result in a lower accuracy (see figure 1).
 Thus, when a model trained on such a dataset is used, e.g. for social science experiments, it can lead to unfair results and wrong interpretations. 
 
 \begin{figure}[h!]
         \includegraphics[width=\linewidth]{images/Figure_1.png}
-        \caption{A confusion matrix representing the true positive distribution of the name-nationality dataset produced by a recurrent neural network and the confusion of british and american names}
+        \caption{A confusion matrix representing the true positive distribution produced by a recurrent neural network that was trained on a name-nationality dataset.
+                It shows a strong confusion of British and American names and therefore a lower accuracy of both classes.}
         \label{fig:tp_scores}
 \end{figure}
 
-Another dataset that is a good showcase for the learnability imbalance is the CIFAR-10 \cite{krizhevsky2009learning} dataset (32$\times$32 RGB images of ten different classes) because it also contains similiar classes such as \emph{dog} and \emph{cat}.
+Another dataset that is a good showcase for the learnability imbalance is the CIFAR-10 \cite{krizhevsky2009learning} dataset (32$\times$32 RGB images of ten different classes) because it also contains similar classes such as \emph{dog} and \emph{cat}.
 The CIFAR-10, a name-nationality and a further tabular dataset will be used for experiments in order to find methods for minimizing the variance in the evaluation scores.
 
 To develop such methods, one should first resort to the solutions of the class imbalance problem.
@@ -72,9 +73,9 @@ Therefore, there is a weight assigned to every class which is greater the fewer 
 This has the effect that samples from a smaller class will produce a higher error and, since the aim of a neural network is to minimize the error \cite{rumelhart1985learning}, will receive a higher focus in the learning process.
 Other methods will be discussed in the literature review.
 
-Almost all of the approaches to counteract class imbalance rely on the different proportions of the classes in the dataset.
+Almost all the approaches to counteract class imbalance rely on the different proportions of the classes in the dataset.
 This raises the question if and how they are applicable on datasets that, even though they are not affected by from class imbalance, still show a big learnability imbalance.
-When working with such datasets the learnability differences of the individual classes are mostly only identifiable after the model has been trained normally, i.e without applying any methods. % and without any regard for the potential imbalance of the dataset. 
+When working with such datasets the learnability differences of the individual classes are mostly only identifiable after the model has been trained normally, i.e. without applying any methods. % and without any regard for the potential imbalance of the dataset. 
 The calculation of the true positive rates and a visualization (e.g. confusion matrix) can then reveal what classes were learned best and which should have received a higher weight.
 These evaluation scores can then be used, for example, to determine which loss weights should be used for each class (as shown in \emph{algorithm 1}).
 
@@ -103,7 +104,7 @@ Instead of class sizes, these rates will be used as a measure for how much a met
 
 \begin{figure}[h!]
         \includegraphics[width=\linewidth]{images/tp_comparison.png}
-        \caption{true positive rates produced by a model that was trained normally (\textcolor{blue}{blue}) on five CIFAR-10 classes compared to the desired true positive rates (\textcolor{orange}{orange})}
+        \caption{True positive rates produced by a model that was trained normally (\textcolor{blue}{blue}) on five CIFAR-10 classes compared with the desired true positive rates (\textcolor{orange}{orange}).}
         \label{fig:tp_comparsion}
 \end{figure}
 
@@ -118,7 +119,7 @@ Therefore, the proposed solutions to class imbalance are fundamental to this res
 Since it was used as a main example in the introduction, the first method to examine is loss weighting. 
 This approach has proven itself to be a good way of achieving a lower variance in the per-class accuracies of unbalanced datasets and will be adapted to this research. 
 In general, the weights are chosen to be inversely proportional to the amount of samples in the classes, in order to weight smaller classes more than bigger ones. 
-An example for a weight calculation function, proposed by Yin Cui et al. \cite{cui2019class}, is shown in forumla 1:
+An example for a weight calculation function, proposed by Yin Cui et al. \cite{cui2019class}, is shown in formula 1:
 
 \[ w_c = \frac{1-\beta^{N_c}}{1-\beta} \text{ ,} \]
 
@@ -145,7 +146,7 @@ The weight for the focal loss is defined as the following ($\gamma$ is a positiv
 \[ w_c = (1 - \hat{y}_c)^\gamma \text{ .} \]
 
 When multiplying this weight by the loss, it will be bigger the smaller the confidence of the correct class was. 
-The adavantage of the focal loss over the proposed weight generation of this research is that it does not require a pre-training in order to figure out which classes a harder to learn, since it does this during the training process.
+The advantage of the focal loss over the proposed weight generation of this research is that it does not require a pre-training in order to figure out which classes a harder to learn, since it does this during the training process.
 Though, it can be hypothesized that this weighting could have less impact on learnability imbalanced datasets because it figures out the imbalance while training.
 In contrast to this, when training unweighted first, calculating the weights afterwards and then train again with those weights, the loss function can start penalizing the classes differently right from the beginning.
 
@@ -162,40 +163,48 @@ The others require a pre-training in order to determine the learnability differe
 
 \section{methodology}
 In order to produce more interpretable results, the proposed approaches have to be applied on different models with different tasks. 
-There are three main diciplines: image, sequential data and tabular data classification. 
+There are three main disciplines: image, sequential data and tabular data classification. 
 When testing an approach on each task, the results can be interpreted more generalized. 
-But it can also reveal if any methods works better for one specific dicipline than for others. 
+But it can also reveal if any methods works better for one specific discipline than for others. 
 If there is such a suspicion, the methods will be tested on even more datasets.
 
 As already mentioned in the introduction, to test the approaches on image classification the CIFAR-10 dataset will be used.
-It contains 60.000 32$\times$32 pixel RGB (i.e. channels for red, green and blue color) images, that are equally distributed among ten classes.
+It contains 60,000 32$\times$32 pixel RGB (i.e. channels for red, green and blue color) images, that are equally distributed among ten classes.
 This dataset is freely available and commonly used in computer vision research.
 The architecture of the model that will be trained on this dataset will be a convolutional neural network \cite{lecun1989backpropagation} with residual connections \cite{he2016deep}.
 For testing the approach on sequential data, a private name-ethnicity dataset will be used.
 This dataset was gathered by the government of Great Britain and provided to the author for a prior project based on name-ethnicity-classification.
-Within this project, the maximum accuracy for this classification problem was reached by using a \emph{ConvLSTM} architecture, i.e. the combination of a convolutional neural network and a LSTM (long-short term memory) \emph{gers2000learning}, which will also be used in this research. 
+Within this project, the maximum accuracy for this classification problem was reached by using a \emph{ConvLSTM} architecture, i.e. the combination of a convolutional neural network and a LSTM (long-short term memory) \cite{gers2000learning}, which will also be used in this research. 
 Finally, the tabular dataset, which will be used, has yet to be chosen.
+
+The functions, which will produce loss weights or oversampling chances, are created similarly to the \emph{effective number of samples} loss weighting technique. 
+For a class with a lower true positive score, the functions should provide a larger value. 
+The following formula (4) shows a possible loss weight generation function that this research will use ($\gamma$ is a positive hyperparameter for scaling):
+
+\[ w_c = \left(1-\left(\frac{s_c - \bar{s}}{s_c}\right)\right)^\gamma \text{ .} \]
+
+If the true positive score $s_c$ of class $c$ is below the average score $\bar{s}$, the corresponding weight is greater than one, otherwise it is less than one.
 
 The metric used for measuring how much a potential learnability imbalance impacted the model is the variance of the per-class accuracies.
 Therefore, the effectiveness of the proposed approaches can be determined by the difference between the variances generated with and without the approaches:
 
 \[ \text{Var}(s) = \frac{1}{C} \sum_{i=1}^{C} (s_i - \bar{s})^2 \text{ ,} \]
-\[ D = \text{Var}(s) - \text{Var}(s') \text{ ,} \]
+\[ \text{D} = \text{Var}(s) - \text{Var}(s') \text{ ,} \]
 
 where $s'$ are the true positive scores produced by a model using one of the proposed methods and $s$ of a model that was trained normally. 
-If $Var(s')$ is smaller that $Var(s)$, a approach showed a potential effectiveness.
+If $\text{Var}(s')$ is smaller that $\text{Var}(s)$ and D is therefore positive, an approach showed a potential effectiveness.
 But if the difference is not significant, a statistical test must be performed in order to investigate if the reason for this difference was indeed the used method.
 
 The experiments will be implemented in the \emph{Python} programming language and the models will be built and trained using the \emph{Pytorch} deep learning framework \cite{paszke2019pytorch}.
-In addition, an experiment manager, such as \emph{Weights\&Baises} \cite{WandB}, will keep the results in an orderly and accessible manner.
+In addition, an experiment manager, such as \emph{Weights\&Biases} \cite{WandB}, will keep the results in an orderly and accessible manner.
 
 \section{research plan}
-This research is expected to be completed in a little over a year and will not consume many ressources.
+This research is expected to be completed in a little over a year and will not consume many resources.
 The reason for that is that the capacities (i.e. number of parameters) of the models used for the experiments are not high, since they do not need to reach state-of-the-art results.
 Additionally, the datasets (which are already provided) are not particularly high dimensional and consist of a manageable number of samples.
-Therefore the experiments do not require high-end hardware and can be run in a short amount of time.
+Therefore, the experiments do not require high-end hardware and can be run in a short amount of time.
 
-The esitmated duration of this research is 14 months and will be performed in four stages, as shown in the table below.
+The estimated duration of this research is 14 months and will be performed in four stages, as shown in the table below.
 
 \begin{center}
         \captionof{table}{schedule of research} 
@@ -213,7 +222,7 @@ The esitmated duration of this research is 14 months and will be performed in fo
         \end{tabular}
 \end{center}
         
-In the first stage, the investigation, theoretical approaches are conceptualized by doing a more indepth literature review and adapting the proposed approaches to the learnablity imbalance problem. 
+In the first stage, the investigation, theoretical approaches are conceptualized by doing a more in depth literature review and adapting the proposed approaches to the learnability imbalance problem. 
 The aim is to find several candidates for functions that produce loss weights, augmentation and oversampling chances based on the true positive scores.
 This investigation also gives the opportunity to encounter previously unconsidered methods with which the research can be extended.
 
