@@ -1,11 +1,11 @@
 # Fdb version 3
-["biber research-proposal"] 1624609954 "research-proposal.bcf" "research-proposal.bbl" "research-proposal" 1624611091
+["biber research-proposal"] 1624609954 "research-proposal.bcf" "research-proposal.bbl" "research-proposal" 1624611573
   "references.bib" 1624609930 3992 cef9c776b57a8bfde701f38cd2163aed ""
-  "research-proposal.bcf" 1624611022 106885 c6541071b9d209a406a56ab20af472b6 "pdflatex"
+  "research-proposal.bcf" 1624611572 106885 c6541071b9d209a406a56ab20af472b6 "pdflatex"
   (generated)
-  "research-proposal.blg"
   "research-proposal.bbl"
-["pdflatex"] 1624611019 "d:/Linux/Programming/Python/MachineLearning/research-proposal/paper/research-proposal.tex" "research-proposal.pdf" "research-proposal" 1624611091
+  "research-proposal.blg"
+["pdflatex"] 1624611569 "d:/Linux/Programming/Python/MachineLearning/research-proposal/paper/research-proposal.tex" "research-proposal.pdf" "research-proposal" 1624611573
   "C:/Users/Theodor/AppData/Local/MiKTeX/miktex/data/le/pdftex/pdflatex.fmt" 1621339262 9408413 555c74bd0465eaf25200ac7fcf4e0f30 ""
   "C:/Users/Theodor/AppData/Local/MiKTeX/pdftex/config/pdftex.map" 1624393119 82507 a9eef8696c92627b87e9975edea03b2a ""
   "C:/Users/Theodor/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/base/8r.enc" 1458477487 4993 80dc9bab7f31fb78a000ccfed0e27cab ""
@@ -102,16 +102,16 @@
   "C:/Users/Theodor/AppData/Local/Programs/MiKTeX/tex/latex/psnfss/ot1ptm.fd" 1585257378 1007 15056f4a61917ceed3a44e4ac11fcc52 ""
   "C:/Users/Theodor/AppData/Local/Programs/MiKTeX/tex/latex/url/url.sty" 1388494052 12796 8edb7d69a20b857904dd0ea757c14ec9 ""
   "C:/Users/Theodor/AppData/Local/Programs/MiKTeX/tex/latex/xcolor/xcolor.sty" 1463135581 57049 34128738f682d033422ca125f82e5d62 ""
-  "d:/Linux/Programming/Python/MachineLearning/research-proposal/paper/research-proposal.tex" 1624611090 19107 b0089c66705e8e2f4ef241b87d6f07aa ""
+  "d:/Linux/Programming/Python/MachineLearning/research-proposal/paper/research-proposal.tex" 1624611568 19107 ad696b427bd50a637f67d21a8d0ec111 ""
   "images/Figure_1.png" 1622302990 67309 2e6e806de1b17452c9931e94136738f3 ""
   "images/tp_comparison.png" 1623401938 85763 41fd321abc857b42acefb03e55644f92 ""
-  "research-proposal.aux" 1624611022 4642 115c60737cd6c689033b6c0c90631560 "pdflatex"
+  "research-proposal.aux" 1624611572 4642 115c60737cd6c689033b6c0c90631560 "pdflatex"
   "research-proposal.bbl" 1624609957 23611 afda930aa98e18889d337cc197272dc7 "biber research-proposal"
-  "research-proposal.run.xml" 1624611022 2396 d9239b805365612588a1ff351d1c4f6c "pdflatex"
-  "research-proposal.tex" 1624611090 19107 b0089c66705e8e2f4ef241b87d6f07aa ""
+  "research-proposal.run.xml" 1624611572 2396 d9239b805365612588a1ff351d1c4f6c "pdflatex"
+  "research-proposal.tex" 1624611568 19107 ad696b427bd50a637f67d21a8d0ec111 ""
   (generated)
+  "research-proposal.run.xml"
+  "research-proposal.aux"
   "research-proposal.log"
   "research-proposal.bcf"
-  "research-proposal.aux"
-  "research-proposal.run.xml"
   "research-proposal.pdf"
