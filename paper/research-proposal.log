@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (MiKTeX 21.2) (preloaded format=pdflatex 2021.5.18)  25 JUN 2021 10:59
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (MiKTeX 21.2) (preloaded format=pdflatex 2021.5.18)  25 JUN 2021 11:48
 entering extended mode
 **d:/Linux/Programming/Python/MachineLearning/research-proposal/paper/research-proposal.tex
 (d:/Linux/Programming/Python/MachineLearning/research-proposal/paper/research-proposal.tex
@@ -336,7 +336,7 @@ Package biblatex Info: ... file 'blx-dm.def' found.
 File: blx-dm.def 2020/12/31 v3.16 biblatex localization (PK/MW)
 )
 Package biblatex Info: Trying to load biblatex style data model...
-Package biblatex Info: ... file 'numeric.dbx' not found.
+Package biblatex Info: ... file 'ieee.dbx' not found.
 Package biblatex Info: Trying to load biblatex custom data model...
 Package biblatex Info: ... file 'biblatex-dm.cfg' not found.
 \c@afterword=\count327
@@ -444,6 +444,14 @@ File: biblatex.def 2020/12/31 v3.16 biblatex compatibility (PK/MW)
 \biburllcskip=\muskip21
 \c@smartand=\count403
 )
+Package biblatex Info: Trying to load bibliography style 'ieee'...
+Package biblatex Info: ... file 'ieee.bbx' found.
+ (C:\Users\Theodor\AppData\Local\Programs\MiKTeX\tex/latex/biblatex-ieee\ieee.bbx
+File: ieee.bbx 2021/03/25 v1.3e biblatex bibliography style
+Package biblatex Info: Trying to load bibliography style 'numeric-comp'...
+Package biblatex Info: ... file 'numeric-comp.bbx' found.
+ (C:\Users\Theodor\AppData\Local\Programs\MiKTeX\tex/latex/biblatex/bbx\numeric-comp.bbx
+File: numeric-comp.bbx 2020/12/31 v3.16 biblatex bibliography style (PK/MW)
 Package biblatex Info: Trying to load bibliography style 'numeric'...
 Package biblatex Info: ... file 'numeric.bbx' found.
  (C:\Users\Theodor\AppData\Local\Programs\MiKTeX\tex/latex/biblatex/bbx\numeric.bbx
@@ -454,11 +462,19 @@ Package biblatex Info: ... file 'standard.bbx' found.
 File: standard.bbx 2020/12/31 v3.16 biblatex bibliography style (PK/MW)
 \c@bbx:relatedcount=\count404
 \c@bbx:relatedtotal=\count405
-))
-Package biblatex Info: Trying to load citation style 'numeric'...
-Package biblatex Info: ... file 'numeric.cbx' found.
- (C:\Users\Theodor\AppData\Local\Programs\MiKTeX\tex/latex/biblatex/cbx\numeric.cbx
-File: numeric.cbx 2020/12/31 v3.16 biblatex citation style (PK/MW)
+))))
+Package biblatex Info: Trying to load citation style 'ieee'...
+Package biblatex Info: ... file 'ieee.cbx' found.
+ (C:\Users\Theodor\AppData\Local\Programs\MiKTeX\tex/latex/biblatex-ieee\ieee.cbx
+File: ieee.cbx 2021/03/25 v1.3e biblatex citation style
+Package biblatex Info: Trying to load citation style 'numeric-comp'...
+Package biblatex Info: ... file 'numeric-comp.cbx' found.
+ (C:\Users\Theodor\AppData\Local\Programs\MiKTeX\tex/latex/biblatex/cbx\numeric-comp.cbx
+File: numeric-comp.cbx 2020/12/31 v3.16 biblatex citation style (PK/MW)
+\c@cbx@tempcnta=\count406
+\c@cbx@tempcntb=\count407
+\c@cbx@tempcntc=\count408
+\c@cbx@tempcntd=\count409
 Package biblatex Info: Redefining '\cite'.
 Package biblatex Info: Redefining '\parencite'.
 Package biblatex Info: Redefining '\footcite'.
@@ -471,48 +487,51 @@ Package biblatex Info: Redefining '\cites'.
 Package biblatex Info: Redefining '\parencites'.
 Package biblatex Info: Redefining '\smartcites'.
 )
+Package biblatex Info: Redefining '\cite'.
+Package biblatex Info: Redefining '\cites'.
+)
 Package biblatex Info: Trying to load configuration file...
 Package biblatex Info: ... file 'biblatex.cfg' found.
  (C:\Users\Theodor\AppData\Local\Programs\MiKTeX\tex/latex/biblatex\biblatex.cfg
 File: biblatex.cfg 
 ))
-\@quotelevel=\count406
-\@quotereset=\count407
+\@quotelevel=\count410
+\@quotereset=\count411
  (C:\Users\Theodor\AppData\Local\Programs\MiKTeX\tex/latex/l3backend\l3backend-pdftex.def
 File: l3backend-pdftex.def 2021-02-18 L3 backend support: PDF output (pdfTeX)
-\l__color_backend_stack_int=\count408
+\l__color_backend_stack_int=\count412
 \l__pdf_internal_box=\box53
 ) (research-proposal.aux)
 \openout1 = `research-proposal.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 18.
-LaTeX Font Info:    ... okay on input line 18.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 18.
-LaTeX Font Info:    ... okay on input line 18.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 18.
-LaTeX Font Info:    ... okay on input line 18.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 18.
-LaTeX Font Info:    ... okay on input line 18.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 18.
-LaTeX Font Info:    ... okay on input line 18.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 18.
-LaTeX Font Info:    ... okay on input line 18.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 18.
-LaTeX Font Info:    ... okay on input line 18.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 24.
+LaTeX Font Info:    ... okay on input line 24.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 24.
+LaTeX Font Info:    ... okay on input line 24.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 24.
+LaTeX Font Info:    ... okay on input line 24.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 24.
+LaTeX Font Info:    ... okay on input line 24.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 24.
+LaTeX Font Info:    ... okay on input line 24.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 24.
+LaTeX Font Info:    ... okay on input line 24.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 24.
+LaTeX Font Info:    ... okay on input line 24.
 
 -- Lines per column: 58 (exact).
 (C:\Users\Theodor\AppData\Local\Programs\MiKTeX\tex/context/base/mkii\supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count409
+\scratchcounter=\count413
 \scratchdimen=\dimen180
 \scratchbox=\box54
-\nofMPsegments=\count410
-\nofMParguments=\count411
+\nofMPsegments=\count414
+\nofMParguments=\count415
 \everyMPshowfont=\toks27
-\MPscratchCnt=\count412
+\MPscratchCnt=\count416
 \MPscratchDim=\dimen181
-\MPnumerator=\count413
-\makeMPintoPDFobject=\count414
+\MPnumerator=\count417
+\makeMPintoPDFobject=\count418
 \everyMPtoPDFconversion=\toks28
 ) (C:\Users\Theodor\AppData\Local\Programs\MiKTeX\tex/latex/epstopdf-pkg\epstopdf-base.sty
 Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
@@ -554,40 +573,40 @@ Package: blx-case-expl3 2020/12/31 v3.16 expl3 case changing code for biblatex
 Package biblatex Info: Trying to load bibliographic data...
 Package biblatex Info: ... file 'research-proposal.bbl' found.
  (research-proposal.bbl)
-Package biblatex Info: Reference section=0 on input line 18.
-Package biblatex Info: Reference segment=0 on input line 18.
+Package biblatex Info: Reference section=0 on input line 24.
+Package biblatex Info: Reference segment=0 on input line 24.
 <images/Figure_1.png, id=1, 587.5551pt x 482.0409pt>
 File: images/Figure_1.png Graphic file (type png)
 <use images/Figure_1.png>
-Package pdftex.def Info: images/Figure_1.png  used on input line 61.
+Package pdftex.def Info: images/Figure_1.png  used on input line 67.
 (pdftex.def)             Requested size: 252.0pt x 206.74394pt.
 
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-LaTeX Font Info:    Trying to load font information for U+msa on input line 67.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 73.
 (C:\Users\Theodor\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 67.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 73.
  (C:\Users\Theodor\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 ) [1{C:/Users/Theodor/AppData/Local/MiKTeX/pdftex/config/pdftex.map}
 
 
  <./images/Figure_1.png>]
-LaTeX Font Info:    Trying to load font information for OT1+pcr on input line 92.
+LaTeX Font Info:    Trying to load font information for OT1+pcr on input line 98.
  (C:\Users\Theodor\AppData\Local\Programs\MiKTeX\tex/latex/psnfss\ot1pcr.fd
 File: ot1pcr.fd 2001/06/04 font definitions for OT1/pcr.
 )
 <images/tp_comparison.png, id=13, 1151.9838pt x 687.2877pt>
 File: images/tp_comparison.png Graphic file (type png)
 <use images/tp_comparison.png>
-Package pdftex.def Info: images/tp_comparison.png  used on input line 107.
+Package pdftex.def Info: images/tp_comparison.png  used on input line 113.
 (pdftex.def)             Requested size: 252.0pt x 150.34381pt.
  [2 <./images/tp_comparison.png>] [3]
-Underfull \hbox (badness 3323) in paragraph at lines 236--236
-[]\OT1/ptm/m/n/10 Theodor Peifer. \OT1/ptm/m/it/10 thi-research-proposal\OT1/ptm/m/n/10 . 2021. \OT1/ptm/m/sc/10 url\OT1/ptm/m/n/10 :
+Underfull \hbox (badness 1565) in paragraph at lines 242--242
+\OT1/ptm/m/n/10 performance deep learn-ing li-brary,'' \OT1/ptm/m/it/10 arXiv preprint
  []
 
 [4] (research-proposal.aux)
@@ -596,15 +615,15 @@ Package logreq Info: Writing requests to 'research-proposal.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 12966 strings out of 479334
- 236401 string characters out of 2856134
- 954058 words of memory out of 3000000
- 30284 multiletter control sequences out of 15000+200000
+ 13072 strings out of 479334
+ 239084 string characters out of 2856134
+ 958311 words of memory out of 3000000
+ 30381 multiletter control sequences out of 15000+200000
  439831 words of font info for 91 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
- 72i,7n,78p,818b,1322s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 72i,7n,78p,1106b,1212s stack positions out of 5000i,500n,10000p,200000b,50000s
 {C:/Users/Theodor/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/base/8r.enc}<C:/Users/Theodor/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Users/Theodor/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Users/Theodor/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi5.pfb><C:/Users/Theodor/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi7.pfb><C:/Users/Theodor/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/Theodor/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr7.pfb><C:/Users/Theodor/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/Theodor/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy7.pfb><C:/Users/Theodor/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/symbols/msbm10.pfb><C:/Users/Theodor/AppData/Local/Programs/MiKTeX/fonts/type1/urw/courier/ucrr8a.pfb><C:/Users/Theodor/AppData/Local/Programs/MiKTeX/fonts/type1/urw/times/utmb8a.pfb><C:/Users/Theodor/AppData/Local/Programs/MiKTeX/fonts/type1/urw/times/utmbi8a.pfb><C:/Users/Theodor/AppData/Local/Programs/MiKTeX/fonts/type1/urw/times/utmr8a.pfb><C:/Users/Theodor/AppData/Local/Programs/MiKTeX/fonts/type1/urw/times/utmri8a.pfb>
-Output written on research-proposal.pdf (4 pages, 279676 bytes).
+Output written on research-proposal.pdf (4 pages, 280183 bytes).
 PDF statistics:
  77 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)

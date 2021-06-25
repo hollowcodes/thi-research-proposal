@@ -9,7 +9,13 @@
 \usepackage{amssymb}
 \usepackage{caption}
 \usepackage{xcolor}
-\usepackage[backend=biber, style=numeric, sorting=none]{biblatex}
+\usepackage[backend=biber, style=ieee, sorting=none, maxbibnames=99]{biblatex}
+
+\DeclareFieldFormat
+  [article,inbook,incollection,inproceedings,patent,thesis,
+   unpublished,techreport,misc,book]
+  {title}{\mkbibquote{#1}}
+  
 \addbibresource{references.bib}
 \captionsetup[figure]{font=small,labelfont=small}
 

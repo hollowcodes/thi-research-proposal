@@ -1,15 +1,15 @@
 [0] Config.pm:311> INFO - This is Biber 2.16
 [0] Config.pm:314> INFO - Logfile is 'research-proposal.blg'
-[164] biber-MSWIN64:340> INFO - === 
-[226] Biber.pm:415> INFO - Reading 'research-proposal.bcf'
-[406] Biber.pm:952> INFO - Found 14 citekeys in bib section 0
-[429] Biber.pm:4340> INFO - Processing section 0
+[165] biber-MSWIN64:340> INFO - === 
+[229] Biber.pm:415> INFO - Reading 'research-proposal.bcf'
+[405] Biber.pm:952> INFO - Found 14 citekeys in bib section 0
+[428] Biber.pm:4340> INFO - Processing section 0
 [444] Biber.pm:4531> INFO - Looking for bibtex format file 'references.bib' for section 0
-[534] bibtex.pm:1689> INFO - LaTeX decoding ...
-[556] bibtex.pm:1494> INFO - Found BibTeX data source 'references.bib'
-[713] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'variable = shifted' with 'variable = non-ignorable'
-[714] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'normalization = NFD' with 'normalization = prenormalized'
-[714] Biber.pm:4168> INFO - Sorting list 'none/global//global/global' of type 'entry' with template 'none' and locale 'en-US'
-[714] Biber.pm:4174> INFO - No sort tailoring available for locale 'en-US'
-[732] bbl.pm:654> INFO - Writing 'research-proposal.bbl' with encoding 'UTF-8'
-[743] bbl.pm:757> INFO - Output to research-proposal.bbl
+[539] bibtex.pm:1689> INFO - LaTeX decoding ...
+[562] bibtex.pm:1494> INFO - Found BibTeX data source 'references.bib'
+[723] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'variable = shifted' with 'variable = non-ignorable'
+[723] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'normalization = NFD' with 'normalization = prenormalized'
+[724] Biber.pm:4168> INFO - Sorting list 'none/global//global/global' of type 'entry' with template 'none' and locale 'en-US'
+[724] Biber.pm:4174> INFO - No sort tailoring available for locale 'en-US'
+[744] bbl.pm:654> INFO - Writing 'research-proposal.bbl' with encoding 'UTF-8'
+[755] bbl.pm:757> INFO - Output to research-proposal.bbl
