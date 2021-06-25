@@ -413,6 +413,35 @@
       \field{pages}{2451\bibrangedash 2471}
       \range{pages}{21}
     \endentry
+    \entry{van1995python}{book}{}
+      \name{author}{2}{}{%
+        {{hash=e504145eff12cd8803c227c919ccfacd}{%
+           family={Van\bibnamedelima Rossum},
+           familyi={V\bibinitperiod\bibinitdelim R\bibinitperiod},
+           given={Guido},
+           giveni={G\bibinitperiod}}}%
+        {{hash=bf4b931c97bf1765ef2a50cdb0a42969}{%
+           family={Drake\bibnamedelima Jr},
+           familyi={D\bibinitperiod\bibinitdelim J\bibinitperiod},
+           given={Fred\bibnamedelima L},
+           giveni={F\bibinitperiod\bibinitdelim L\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Centrum voor Wiskunde en Informatica Amsterdam}%
+      }
+      \strng{namehash}{7ef38a15b789891031dc3c2618872607}
+      \strng{fullhash}{7ef38a15b789891031dc3c2618872607}
+      \strng{bibnamehash}{7ef38a15b789891031dc3c2618872607}
+      \strng{authorbibnamehash}{7ef38a15b789891031dc3c2618872607}
+      \strng{authornamehash}{7ef38a15b789891031dc3c2618872607}
+      \strng{authorfullhash}{7ef38a15b789891031dc3c2618872607}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Python reference manual}
+      \field{year}{1995}
+    \endentry
     \entry{paszke2019pytorch}{article}{}
       \true{moreauthor}
       \true{morelabelname}

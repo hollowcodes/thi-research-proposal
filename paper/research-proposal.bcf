@@ -2356,9 +2356,10 @@
     <bcf:citekey order="10">lecun1989backpropagation</bcf:citekey>
     <bcf:citekey order="11">he2016deep</bcf:citekey>
     <bcf:citekey order="12">gers2000learning</bcf:citekey>
-    <bcf:citekey order="13">paszke2019pytorch</bcf:citekey>
-    <bcf:citekey order="14">WandB</bcf:citekey>
-    <bcf:citekey order="15">githubResearchProposal</bcf:citekey>
+    <bcf:citekey order="13">van1995python</bcf:citekey>
+    <bcf:citekey order="14">paszke2019pytorch</bcf:citekey>
+    <bcf:citekey order="15">WandB</bcf:citekey>
+    <bcf:citekey order="16">githubResearchProposal</bcf:citekey>
   </bcf:section>
   <!-- SORTING TEMPLATES -->
   <bcf:sortingtemplate name="none">
